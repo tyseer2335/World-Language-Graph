@@ -1,0 +1,628 @@
+﻿wals_code,iso_code,glottocode,Name,latitude,longitude,genus,family,macroarea,countrycodes
+abd,abi,abid1235,Abidji,5.666666667,-4.583333333,Kwa,Niger-Congo,Africa,CI
+ace,ace,achi1257,Acehnese,5.5,95.5,Malayo-Sumbawan,Austronesian,Eurasia,ID
+acl,ach,acol1236,Acholi,3,32.66666667,Nilotic,Eastern Sudanic,Africa,UG SD
+adi,adj,adio1239,Adioukrou,5.416666667,-4.583333333,Kwa,Niger-Congo,Africa,CI
+adz,adz,adze1240,Adzera,-6.25,146.25,Oceanic,Austronesian,Papunesia,PG
+afr,afr,afri1274,Afrikaans,-31,22,Germanic,Indo-European,Africa,ZA
+agb,agb,legb1242,LeggbÃ³,6,8,Cross River,Niger-Congo,Africa,NG
+agc,agt,cent2084,Agta (Central),17.96666667,121.8333333,Greater Central Philippine,Austronesian,Papunesia,PH
+agd,duo,dupa1235,Agta (Dupaningan),18,122.0833333,Greater Central Philippine,Austronesian,Papunesia,PH
+agh,agq,aghe1239,Aghem,6.666666667,10,Bantoid,Niger-Congo,Africa,CM
+ajg,ajg,ajab1235,Ajagbe,7,1.75,Kwa,Niger-Congo,Africa,TG BJ
+aji,aji,ajie1238,AjiÃ«,-21.33333333,165.5,Oceanic,Austronesian,Papunesia,NC
+aka,axk,yaka1272,Aka,2.666666667,16.25,Bantoid,Niger-Congo,Africa,CF CG
+akl,akl,akla1241,Aklanon,11.58333333,122.3333333,Greater Central Philippine,Austronesian,Papunesia,PH
+akn,aka,akan1250,Akan,6.5,-1.25,Kwa,Niger-Congo,Africa,GH
+ald,ald,alla1248,Alladian,5.166666667,-4.333333333,Kwa,Niger-Congo,Africa,CI
+alk,apr,arop1243,Arop-Lokep,-5.383333333,147.05,Oceanic,Austronesian,Papunesia,PG
+all,nrz,lala1268,Ala'ala,-8.916666667,146.75,Oceanic,Austronesian,Papunesia,PG
+alt,gsw,swis1247,Alsatian,48.5,7.5,Germanic,Indo-European,Eurasia,FR
+alw,alh,alaw1244,Alawa,-15.16666667,134.25,Alawa,Mangarrayi-Maran,Australia,AU
+ama,aie,amar1272,Amara,-5.666666667,148.5,Oceanic,Austronesian,Papunesia,PG
+aml,omb,east2443,Ambae (Lolovoli Northeast),-15.41666667,167.8833333,Oceanic,Austronesian,Papunesia,VU
+ani,hnh,anii1246,//Ani,-18.91666667,21.91666667,Khoe-Kwadi,Khoe-Kwadi,Africa,BW
+anj,aty,anei1239,Anejom,-20.2,169.8,Oceanic,Austronesian,Papunesia,VU
+anu,cko,anuf1239,Anufo,10.08333333,0.25,Kwa,Niger-Congo,Africa,GH TG BJ
+any,anu,anua1242,Anywa,8,33.5,Nilotic,Eastern Sudanic,Africa,ET
+ara,arw,araw1276,Arawak,5.5,-55.16666667,Caribbean Arawakan,Arawakan,South America,SR
+ari,laz,arib1241,Aribwatsa,-6.716666667,147,Oceanic,Austronesian,Papunesia,PG
+ark,akr,arak1252,Araki,-15.66666667,166.9166667,Oceanic,Austronesian,Papunesia,VU
+aro,aia,aros1241,Arosi,-10.25,161.3333333,Oceanic,Austronesian,Papunesia,SB
+arx,alu,area1240,'Are'are,-9.25,161.1666667,Oceanic,Austronesian,Papunesia,SB
+ass,asm,assa1263,Assamese,26,93,Indic,Indo-European,Eurasia,IN
+ast,ast,astu1245,Asturian,43.25,-6,Romance,Indo-European,Eurasia,ES
+atc,upv,urip1239,Atchin,-16,167.3333333,Oceanic,Austronesian,Papunesia,VU
+aul,aul,aulu1238,Aulua,-16.33333333,167.6666667,Oceanic,Austronesian,Papunesia,VU
+avk,avi,avik1243,Avikam,5.166666667,-5.5,Kwa,Niger-Congo,Africa,CI
+avt,avn,avat1244,Avatime,6.833333333,0.416666667,Kwa,Niger-Congo,Africa,GH
+awd,awa,awad1243,Awadhi,27.5,81.5,Indic,Indo-European,Eurasia,NP IN
+ayi,any,anyi1245,Anyi,7,-3.5,Kwa,Niger-Congo,Africa,CI
+ayw,nfl,ayiw1239,Ayiwo,-10.33333333,166.25,Oceanic,Austronesian,Papunesia,SB
+bab,bav,veng1238,Babungo,6.116666667,10.41666667,Bantoid,Niger-Congo,Africa,CM
+baf,bfd,bafu1246,Bafut,6.25,9.916666667,Bantoid,Niger-Congo,Africa,CM
+bak,bkc,baka1272,Baka (in Cameroon),2.583333333,13.58333333,Ubangi,Niger-Congo,Africa,CM
+bal,ban,bali1278,Balinese,-8.333333333,115.25,Malayo-Sumbawan,Austronesian,Papunesia,ID
+bam,bam,bamb1269,Bambara,12.5,-7.5,Western Mande,Mande,Africa,ML
+bar,bfa,bari1284,Bari,5,31.66666667,Nilotic,Eastern Sudanic,Africa,SD
+bas,bas,basa1284,BasaÃ¡,3.916666667,10.5,Bantoid,Niger-Congo,Africa,CM
+bat,bya,bata1301,Batak,10.25,119.0833333,Greater Central Philippine,Austronesian,Papunesia,PH
+bbf,bbo,sout2840,Bobo MadarÃ© (Northern),12.41666667,-4.333333333,Western Mande,Mande,Africa,BF
+bbl,bvx,dibo1245,Babole,1.083333333,17.25,Bantoid,Niger-Congo,Africa,CG
+bbu,brm,bara1361,Barambu,3.5,27,Ubangi,Niger-Congo,Africa,CD
+bdg,bfq,bada1257,Badaga,11.66666667,76.75,Southern Dravidian,Dravidian,Eurasia,IN
+bdu,buu,budu1250,Budu,2,28,Bantoid,Niger-Congo,Africa,CD
+bec,ctg,chit1275,Bengali (Chittagong),22.33333333,91.83333333,Indic,Indo-European,Eurasia,BD
+bee,beq,beem1239,Beembe,-3.916666667,14.08333333,Bantoid,Niger-Congo,Africa,CG
+bem,bmy,bemb1258,Bemba,-10,28.25,Bantoid,Niger-Congo,Africa,CD
+ben,ben,beng1280,Bengali,24,90,Indic,Indo-European,Eurasia,IN BD
+bfd,bif,biaf1240,Biafada,11.41666667,-15.16666667,Northern Atlantic,Niger-Congo,Africa,GW
+bfi,ksf,bafi1243,Bafia,5,11.16666667,Bantoid,Niger-Congo,Africa,CM
+bga,bng,beng1282,Benga,1.166666667,9.416666667,Bantoid,Niger-Congo,Africa,GQ GA
+bgi,bgq,bagr1243,Bagri,29.58333333,74.33333333,Indic,Indo-European,Eurasia,IN
+bgs,bsp,baga1272,Baga Sitemu,10.5,-14.5,Mel,Niger-Congo,Africa,GN
+bgz,bdg,bong1289,Banggi,7.25,117.1666667,Barito,Austronesian,Papunesia,MY
+bhi,bhb,bhil1251,Bhili,22,73,Indic,Indo-European,Eurasia,IN
+bho,bho,bhoj1244,Bhojpuri,26,84,Indic,Indo-European,Eurasia,IN
+bia,bip,bila1255,Bira,1,28.75,Bantoid,Niger-Congo,Africa,CD
+bkb,xub,bett1235,Betta Kurumba,11.5,76.75,Southern Dravidian,Dravidian,Eurasia,IN
+bkd,bkd,binu1244,Binukid,8.25,124.8333333,Greater Central Philippine,Austronesian,Papunesia,PH
+bkl,bcl,cent2087,Bikol,13.33333333,123.5,Greater Central Philippine,Austronesian,Papunesia,PH
+bkn,bdu,orok1266,Bakundu,4.833333333,9.333333333,Bantoid,Niger-Congo,Africa,CM
+bkt,bkk,brok1247,Brokskat,35.33333333,76.5,Indic,Indo-European,Eurasia,PK IN
+bku,bri,mokp1239,Bakueri,4.25,9.25,Bantoid,Niger-Congo,Africa,CM
+ble,bci,baou1238,Baule,7,-5,Kwa,Niger-Congo,Africa,CI
+blu,lua,luba1249,Bena-Lulua,-6,21,Bantoid,Niger-Congo,Africa,CD
+blz,bjt,bala1300,Balanta,12.25,-15.33333333,Northern Atlantic,Niger-Congo,Africa,SN GW
+bmn,bax,bamu1253,Bamun,5.5,10.91666667,Bantoid,Niger-Congo,Africa,CM
+bnd,bza,band1352,Bandi,8.083333333,-10.25,Western Mande,Mande,Africa,LR
+bnk,abb,bank1256,Bankon,4.416666667,9.583333333,Bantoid,Niger-Congo,Africa,CM
+bnn,bcm,bann1247,Banoni,-6.416666667,155.25,Oceanic,Austronesian,Papunesia,PG
+bob,bni,bang1354,Bobangi,-1.333333333,17.33333333,Bantoid,Niger-Congo,Africa,CD
+bol,bli,boli1255,Bolia,-1.25,18.33333333,Bantoid,Niger-Congo,Africa,CD
+boz,boz,tiey1235,Bozo (Tigemaxo),15,-4,Western Mande,Mande,Africa,ML
+bsh,buf,bush1247,Bushoong,-4.5,21.5,Bantoid,Niger-Congo,Africa,CD
+bsr,bsc,bass1258,Basari,12.66666667,-13,Northern Atlantic,Niger-Congo,Africa,GN SN
+bub,bvb,bube1242,Bubi,3.5,8.666666667,Bantoid,Niger-Congo,Africa,GQ
+buj,nmg,kwas1243,Bujeba,3,10.16666667,Bantoid,Niger-Congo,Africa,GQ CM
+buk,bxk,buku1249,Bukusu,0.75,34.66666667,Bantoid,Niger-Congo,Africa,KE
+bum,tkw,tean1237,Buma,-11.63333333,166.8333333,Oceanic,Austronesian,Papunesia,SB
+buw,bum,bulu1251,Bulu,3,11,Bantoid,Niger-Congo,Africa,CM
+bvi,wiv,bali1280,Bali-Vitu,-4.9,149.1166667,Oceanic,Austronesian,Papunesia,PG
+ccp,coc,coco1261,Cocopa,32.33333333,-115,Yuman,Hokan,North America,MX US
+ceb,ceb,cebu1242,Cebuano,10,124,Greater Central Philippine,Austronesian,Papunesia,PH
+cem,cam,cemu1238,CÃ¨muhÃ®,-20.83333333,165.1666667,Oceanic,Austronesian,Papunesia,NC
+cga,old,moch1256,Chaga,-3,37,Bantoid,Niger-Congo,Africa,TZ
+chw,cja,west2650,Cham (Western),12,105.5,Malayo-Sumbawan,Austronesian,Eurasia,KH
+chz,nan,minn1241,Chaozhou,23.66666667,116.6666667,Chinese,Sino-Tibetan,Eurasia,CN
+cic,nya,nyan1308,Chichewa,-14,34,Bantoid,Niger-Congo,Africa,ZW MW ZM MZ
+cil,lua,luba1249,CiLuba,-6,22,Bantoid,Niger-Congo,Africa,CD
+ckh,mrn,chek1238,Cheke Holo,-8.333333333,159.6666667,Oceanic,Austronesian,Papunesia,SB
+cme,cjm,east2563,Cham (Eastern),11.33333333,108.5,Malayo-Sumbawan,Austronesian,Eurasia,VN
+cnt,yue,yuec1235,Cantonese,23,113,Chinese,Sino-Tibetan,Eurasia,CN
+com,swb,maor1244,Comorian,-12,44,Bantoid,Niger-Congo,Africa,KM YT
+crh,cje,chru1239,Chru,11.5,108.5,Malayo-Sumbawan,Austronesian,Eurasia,VN
+crl,cal,caro1242,Carolinian,15.2,145.75,Oceanic,Austronesian,Papunesia,MP
+csk,csk,jola1262,Diola-Kasa,12.5,-16.75,Northern Atlantic,Niger-Congo,Africa,
+ctl,cat,stan1289,Catalan,41.75,2,Romance,Indo-European,Eurasia,ES
+cum,ncu,chum1261,Chumburung,7.75,0.25,Kwa,Niger-Congo,Africa,GH
+cuu,chk,chuu1238,Chuukese,7.333333333,151.75,Oceanic,Austronesian,Papunesia,FM
+dar,dry,dara1250,Darai,24,84,Indic,Indo-European,Eurasia,NP
+dat,tcc,dato1239,Datooga,-4.333333333,35.33333333,Nilotic,Eastern Sudanic,Africa,TZ
+dbd,dav,tait1250,Dabida,-4,38.66666667,Bantoid,Niger-Congo,Africa,KE
+dbr,nld,dutc1256,Dutch (Brabantic),50.75,4.5,Germanic,Indo-European,Eurasia,BE
+det,shg,shua1254,Deti,-20.5,24.5,Khoe-Kwadi,Khoe-Kwadi,Africa,BW
+dgi,dgo,indo1311,Dogri,33,75,Indic,Indo-European,Eurasia,IN
+dgo,doo,dong1290,Dongo,3,30,Ubangi,Niger-Congo,Africa,CD
+dhi,div,dhiv1236,Dhivehi,4.166666667,73.5,Indic,Indo-European,Eurasia,MV
+die,dih,kumi1248,DiegueÃ±o (Mesa Grande),32.66666667,-116.1666667,Yuman,Hokan,North America,MX US
+din,dip,nort2815,Dinka,8.5,28,Nilotic,Eastern Sudanic,Africa,SD
+dio,dyo,jola1263,Diola-Fogny,13,-16.25,Northern Atlantic,Niger-Congo,Africa,GM SN
+dli,nld,dutc1256,Dutch (Limburg),51,5.5,Germanic,Indo-European,Eurasia,BE
+dma,dma,duma1253,Duma,-0.95,13,Bantoid,Niger-Congo,Africa,GA
+dmk,dmk,doma1260,Dumaki,36.16666667,74,Indic,Indo-European,Eurasia,PK
+dng,diz,ding1239,Ding,-4.333333333,19.5,Bantoid,Niger-Congo,Africa,CD
+dok,ngc,ngom1268,Doko,3,23.08333333,Bantoid,Niger-Congo,Africa,CD
+dom,rmt,doma1258,Domari,32,35,Indic,Indo-European,Eurasia,IR JO IL
+dre,dhv,dehu1237,Drehu,-21,167.25,Oceanic,Austronesian,Papunesia,NC
+dsh,dan,dani1285,Danish,56,10,Germanic,Indo-European,Eurasia,DK
+dua,dua,dual1243,Duala,4,9.416666667,Bantoid,Niger-Congo,Africa,CM
+dut,nld,dutc1256,Dutch,52.5,6,Germanic,Indo-European,Eurasia,NL
+duz,zea,zeeu1238,Dutch (Zeeuws),51.5,3.75,Germanic,Indo-European,Eurasia,NL BE
+dyu,dyu,dyul1238,Dyula,9.833333333,-4.666666667,Western Mande,Mande,Africa,ML BF CI
+efi,efi,efik1245,Efik,4.916666667,8.5,Cross River,Niger-Congo,Africa,NG
+ega,ega,egaa1242,Ega,5.5,-5.5,Kwa,Niger-Congo,Africa,CI
+eja,etu,ejag1239,Ejagham,5.416666667,8.666666667,Bantoid,Niger-Congo,Africa,NG CM
+eko,eko,koti1238,Ekoti,-16.5,39.5,Bantoid,Niger-Congo,Africa,MZ
+eng,eng,stan1293,English,52,0,Germanic,Indo-European,Eurasia,GB IE
+eny,gey,enya1247,Enya,-0.5,25.25,Bantoid,Niger-Congo,Africa,CD
+erk,erk,sout2856,Efate (South),-17.75,168.4166667,Oceanic,Austronesian,Papunesia,VU
+err,erg,siee1239,Erromangan,-18.83333333,169.1666667,Oceanic,Austronesian,Papunesia,VU
+ewa,ewe,ewee1241,Ewe (Anglo),6,1,Kwa,Niger-Congo,Africa,GH
+ewe,ewe,ewee1241,Ewe,6.333333333,0.416666667,Kwa,Niger-Congo,Africa,TG GH
+ewo,ewo,ewon1239,Ewondo,4,12,Bantoid,Niger-Congo,Africa,CM
+far,fao,faro1244,Faroese,62,-7,Germanic,Indo-European,Eurasia,DK
+fbf,fuh,west2454,Fula (Burkina Faso),14,0,Northern Atlantic,Niger-Congo,Africa,BF
+fea,frs,east2288,Frisian (Eastern),53.58333333,7.5,Germanic,Indo-European,Eurasia,DE
+fef,fmp,fefe1239,Fe'fe',5.25,10.16666667,Bantoid,Niger-Congo,Africa,CM
+fgo,fub,adam1253,Fulani (Gombe),10.25,11.25,Northern Atlantic,Niger-Congo,Africa,NG
+fgu,fuf,pula1262,Fula (Guinean),11.5,-12.5,Northern Atlantic,Niger-Congo,Africa,GN
+fij,fij,fiji1243,Fijian,-17.83333333,178,Oceanic,Austronesian,Papunesia,FJ
+fio,kng,koon1244,Fiote,-5.5,14,Bantoid,Niger-Congo,Africa,CD
+fiw,wyy,west2519,Fijian (Wayan),-17,177.3,Oceanic,Austronesian,Papunesia,FJ
+fli,fuh,west2454,Ful (Liptako),13.5,0.5,Northern Atlantic,Niger-Congo,Africa,BF
+fma,fuc,pula1263,Fula (Mauritanian),16.5,-13.75,Northern Atlantic,Niger-Congo,Africa,MR
+fni,fuv,nige1253,Fula (Nigerian),8.166666667,10.5,Northern Atlantic,Niger-Congo,Africa,NG
+fno,frr,nort2626,Frisian (North),54.5,9,Germanic,Indo-European,Eurasia,DE
+fon,fon,fonn1241,Fongbe,6.416666667,2.166666667,Kwa,Niger-Congo,Africa,BJ
+fre,fra,stan1290,French,48,2,Romance,Indo-European,Eurasia,CH FR
+fri,frs,east2288,Frisian,53,5,Germanic,Indo-European,Eurasia,DE NL
+frw,fry,west2354,Frisian (Western),53,6,Germanic,Indo-European,Eurasia,NL
+fua,fub,adam1253,Fula (Cameroonian),9.166666667,13.5,Northern Atlantic,Niger-Congo,Africa,CM
+fue,fud,east2447,Futuna (East),-14.33333333,-178.1666667,Oceanic,Austronesian,Papunesia,WF
+fum,ffm,maas1239,Fulfulde (Maasina),15,-5,Northern Atlantic,Niger-Congo,Africa,ML
+fus,fuc,pula1263,Fula (Senegal),15,-14,Northern Atlantic,Niger-Congo,Africa,SN
+fut,fut,futu1245,Futuna-Aniwa,-19.53333333,170.2166667,Oceanic,Austronesian,Papunesia,VU
+fuz,cdo,mind1253,Fuzhou,26,119.5,Chinese,Sino-Tibetan,Eurasia,MY TH CN
+ga,gaa,gaaa1244,GÃ£,5.666666667,-0.166666667,Kwa,Niger-Congo,Africa,GH
+gap,pwg,gapa1238,Gapapaiwa,-9.75,149.8333333,Oceanic,Austronesian,Papunesia,PG
+gau,bar,bava1246,German (Upper Austrian),47,14,Germanic,Indo-European,Eurasia,AT
+gba,bar,bava1246,German (Bavarian),49,11.5,Germanic,Indo-European,Eurasia,DE AT
+gbe,gsw,swis1247,German (Bern),47,7.416666667,Germanic,Indo-European,Eurasia,CH
+gbl,deu,stan1295,German (Berlin),52.5,13.33333333,Germanic,Indo-European,Eurasia,DE
+gel,nlg,gela1263,Gela,-9.083333333,160.25,Oceanic,Austronesian,Papunesia,SB
+ger,deu,stan1295,German,52,10,Germanic,Indo-European,Eurasia,AT DE CH
+gha,deu,stan1295,German (Hannover),52.41666667,9.666666667,Germanic,Indo-European,Eurasia,DE
+glc,glg,gali1258,Galician,43,-8,Romance,Indo-European,Eurasia,ES
+gma,deu,stan1295,German (Mansfeldisch),51.58333333,11.5,Germanic,Indo-European,Eurasia,DE
+gmw,gvs,guma1254,Gumawana,-9.25,150.8333333,Oceanic,Austronesian,Papunesia,PG
+goa,guc,wayu1243,Goajiro,12,-72,Caribbean Arawakan,Arawakan,South America,VR CO
+goj,gju,guja1253,Gojri,32.75,76.25,Indic,Indo-European,Eurasia,IN
+gok,gkn,goka1239,Gokana,4.583333333,7.333333333,Cross River,Niger-Congo,Africa,NG
+gol,gol,gola1255,Gola,7.25,-10.83333333,Mel,Niger-Congo,Africa,SL LR
+gos,gsw,swis1247,German (Ostschweiz),47.41666667,9.25,Germanic,Indo-European,Eurasia,CH
+gpz,gsw,swis1247,German (Appenzell),47.33333333,9.333333333,Germanic,Indo-European,Eurasia,CH
+grf,cab,gari1256,GarÃ­funa,15.66666667,-88,Caribbean Arawakan,Arawakan,North America,BZ GT HN
+grp,ksh,kols1241,German (Ripuarian),51,7,Germanic,Indo-European,Eurasia,BE
+grt,gor,goro1259,Gorontalo,0.5,122,Greater Central Philippine,Austronesian,Papunesia,ID
+gtg,gsw,swis1247,German (Thurgau),47.58333333,9.166666667,Germanic,Indo-European,Eurasia,CH
+gth,deu,stan1295,German (Thuringian),51,11,Germanic,Indo-European,Eurasia,DE
+gti,deu,stan1295,German (Timisoara),45.75,21.25,Germanic,Indo-European,Eurasia,RO
+guj,guj,guja1252,Gujarati,23,72,Indic,Indo-European,Eurasia,IN
+gun,yas,nugu1242,Gunu,4.583333333,11.25,Bantoid,Niger-Congo,Africa,CM
+gus,guz,gusi1247,Gusii,-0.75,34.83333333,Bantoid,Niger-Congo,Africa,KE
+guw,guw,gunn1250,Gungbe,6.5,2.5,Kwa,Niger-Congo,Africa,BJ
+gvi,bar,bava1246,German (Viennese),48.16666667,16.33333333,Germanic,Indo-European,Eurasia,AT
+gwe,wep,west2356,German (Westphalian),52,7.5,Germanic,Indo-European,Eurasia,DE
+gzu,gsw,swis1247,German (Zurich),47.41666667,8.5,Germanic,Indo-European,Eurasia,CH
+hak,hak,hakk1236,Hakka,25,116,Chinese,Sino-Tibetan,Eurasia,CN
+hal,hla,hali1244,Halia,-5.25,154.6666667,Oceanic,Austronesian,Papunesia,PG
+hav,yuf,hava1248,Havasupai,35.75,-112.5,Yuman,Hokan,North America,US
+haw,haw,hawa1245,Hawaiian,19.58333333,-155.5,Oceanic,Austronesian,Papunesia,US
+heh,heh,hehe1240,Hehe,-8,36,Bantoid,Niger-Congo,Africa,TZ
+hem,hem,hemb1242,Hemba,-6.25,27.16666667,Bantoid,Niger-Congo,Africa,CD
+her,her,here1253,Herero,-20.58333333,19,Bantoid,Niger-Congo,Africa,BW NA
+hil,hil,hili1240,Hiligaynon,10.25,123,Greater Central Philippine,Austronesian,Papunesia,PH
+hin,hin,hind1269,Hindi,25,77,Indic,Indo-European,Eurasia,IN
+hlb,hlb,halb1244,Halbi,21,81,Indic,Indo-European,Eurasia,IN
+hlp,yuf,hava1248,Hualapai,35.5,-113.75,Yuman,Hokan,North America,US
+hnd,hke,hund1239,Hunde,-1.166666667,28.83333333,Bantoid,Niger-Congo,Africa,CD
+hnn,hnn,hanu1241,HanunÃ³o,12.33333333,121.25,Greater Central Philippine,Austronesian,Papunesia,PH
+hoa,hoa,hoav1238,Hoava,-8.083333333,157.5,Oceanic,Austronesian,Papunesia,SB
+hok,nan,minn1241,Hokkien,25,118,Chinese,Sino-Tibetan,Eurasia,CN
+hol,hoo,holo1240,Holoholo,-5.166666667,29.91666667,Bantoid,Niger-Congo,Africa,TZ
+hya,hay,haya1250,Haya,-2,31.5,Bantoid,Niger-Congo,Africa,TZ
+iaa,iai,iaai1238,Iaai,-20.41666667,166.5833333,Oceanic,Austronesian,Papunesia,NC
+iba,iba,iban1264,Iban,2,112,Malayo-Sumbawan,Austronesian,Papunesia,MY
+ibi,ibb,ibib1240,Ibibio,5.25,7.833333333,Cross River,Niger-Congo,Africa,NG
+ice,isl,icel1247,Icelandic,65,-17,Germanic,Indo-European,Eurasia,IS
+idn,viv,idun1242,Iduna,-9.333333333,150.25,Oceanic,Austronesian,Papunesia,PG
+ifi,ita,ital1282,Italian (Fiorentino),43.75,11.25,Romance,Indo-European,Eurasia,IT
+ifm,ifm,teke1274,Ifumu,-3.666666667,15.33333333,Bantoid,Niger-Congo,Africa,CG
+igb,ibo,nucl1417,Igbo,6,7.333333333,Igboid,Niger-Congo,Africa,NG
+iir,pmy,papu1250,Indonesian (Papuan),-2.5,140.6666667,Malayo-Sumbawan,Austronesian,Papunesia,ID
+ila,ilb,ilaa1246,Ila,-15.58333333,26.5,Bantoid,Niger-Congo,Africa,ZW ZM
+ind,ind,indo1316,Indonesian,0,106,Malayo-Sumbawan,Austronesian,Papunesia,ID
+inj,ind,indo1316,Indonesian (Jakarta),-6.166666667,106.75,Malayo-Sumbawan,Austronesian,Papunesia,ID
+ise,its,isek1239,Isekiri,5.666666667,5.5,Defoid,Niger-Congo,Africa,NG
+ita,ita,ital1282,Italian,43,12,Romance,Indo-European,Eurasia,IT CH
+itb,eml,emil1242,Italian (Bologna),44.5,11.33333333,Romance,Indo-European,Eurasia,IT
+itg,lij,ligu1248,Italian (Genoa),44.41666667,8.95,Romance,Indo-European,Eurasia,IT
+itn,nap,neap1235,Italian (Napolitanian),40.91666667,14.25,Romance,Indo-European,Eurasia,IT
+itu,pms,piem1238,Italian (Turinese),45,7.666666667,Romance,Indo-European,Eurasia,IT
+izi,izi,izie1238,Izi,6.333333333,8,Igboid,Niger-Congo,Africa,NG
+jab,jae,yabe1254,JabÃªm,-6.583333333,147.7833333,Oceanic,Austronesian,Papunesia,PG
+jar,jar,jara1263,Jarawa (in Nigeria),9.5,10.5,Bantoid,Niger-Congo,Africa,NG
+jel,,jeri1242,Jeli,9.5,-5.666666667,Western Mande,Mande,Africa,CI
+jlu,lwo,luwo1239,Luwo,8,28,Nilotic,Eastern Sudanic,Africa,SD
+kal,gwc,kala1373,Kalami,35.5,72.5,Indic,Indo-European,Eurasia,PK
+kan,ogo,khan1278,Kana,4.75,7.416666667,Cross River,Niger-Congo,Africa,NG
+kap,kcl,kela1255,Kela (Apoze),-7.416666667,147.0833333,Oceanic,Austronesian,Papunesia,PG
+kas,kas,kash1277,Kashmiri,34,76,Indic,Indo-European,Eurasia,PK IN
+kau,pss,kaul1240,Kaulong,-6.166666667,149.6666667,Oceanic,Austronesian,Papunesia,PG
+kba,kam,kamb1297,Kamba,-1.5,38,Bantoid,Niger-Congo,Africa,KE
+kel,sbc,kele1258,Kele,-2.083333333,147.0833333,Oceanic,Austronesian,Papunesia,PG
+kga,zga,nucl1379,Kinga,-9,34,Bantoid,Niger-Congo,Africa,TZ
+kgi,cou,wame1240,Konyagi,12.5,-13.25,Northern Atlantic,Niger-Congo,Africa,ML GN
+kgr,kki,kagu1239,Kagulu,-6.333333333,37,Bantoid,Niger-Congo,Africa,TZ
+kho,naq,nama1264,Khoekhoe,-25.5,18,Khoe-Kwadi,Khoe-Kwadi,Africa,NA
+khw,khw,khow1242,Khowar,36,72,Indic,Indo-European,Eurasia,PK
+kik,kik,kiku1240,Kikuyu,-0.75,36.75,Bantoid,Niger-Congo,Africa,KE
+kil,lub,luba1250,Kiluba,-8,26,Bantoid,Niger-Congo,Africa,CD
+kin,kin,kiny1244,Kinyarwanda,-2,30,Bantoid,Niger-Congo,Africa,RW
+kis,kss,kiss1245,Kisi,8.833333333,-10.16666667,Mel,Niger-Congo,Africa,SL GN LR
+kkn,knn,konk1267,Konkani,15.25,74,Indic,Indo-European,Eurasia,IN
+kko,knk,kura1250,Koranko,9.333333333,-11.25,Western Mande,Mande,Africa,SL GN
+kkt,kkk,koko1269,Kokota,-8,159.1333333,Oceanic,Austronesian,Papunesia,SB
+kkv,khl,lusi1240,Lusi,-5.583333333,149.6666667,Oceanic,Austronesian,Papunesia,PG
+kkz,kex,kukn1238,Kokni,20.75,73.5,Indic,Indo-European,Eurasia,IN
+klh,kls,kala1372,Kalasha,35,72,Indic,Indo-European,Eurasia,PK
+klv,kij,kili1267,Kilivila,-8.5,151.0833333,Oceanic,Austronesian,Papunesia,PG
+klw,klb,kili1268,Kiliwa,31.33333333,-115.6666667,Yuman,Hokan,North America,MX
+klz,kck,kala1384,Kalanga,-20.5,27.5,Bantoid,Niger-Congo,Africa,ZW BW
+kmi,kcu,kami1256,Kami,-6.75,38,Bantoid,Niger-Congo,Africa,TZ
+kmj,kdj,kara1483,Karimojong,3,34.16666667,Nilotic,Eastern Sudanic,Africa,UG
+knd,kan,nucl1305,Kannada,14,76,Southern Dravidian,Dravidian,Eurasia,IN
+kod,kfa,koda1255,Kodava,12.16666667,76.83333333,Southern Dravidian,Dravidian,Eurasia,IN
+koh,bcs,kohu1244,Kohumono,6,8.116666667,Cross River,Niger-Congo,Africa,NG
+kon,kng,koon1244,Kongo,-5,15,Bantoid,Niger-Congo,Africa,CD
+kos,kos,kosr1238,Kosraean,5.3,163,Oceanic,Austronesian,Papunesia,FM
+kot,kfe,kota1263,Kota,11.5,77.16666667,Southern Dravidian,Dravidian,Eurasia,IN
+kou,bkm,komc1235,Kom,6.25,10.33333333,Bantoid,Niger-Congo,Africa,CM
+kpe,xpe,libe1247,Kpelle,7,-10,Western Mande,Mande,Africa,LR
+kpn,kpg,kapi1249,Kapingamarangi,1.05,154.75,Oceanic,Austronesian,Papunesia,FM
+kpo,kpo,ikpo1238,Kposo,7.5,0.833333333,Kwa,Niger-Congo,Africa,TG
+kra,leu,kara1486,Kara (in Papua New Guinea),-2.833333333,151.1166667,Oceanic,Austronesian,Papunesia,PG
+krb,gil,gilb1244,Kiribati,1.333333333,173,Oceanic,Austronesian,Papunesia,KI
+krg,sna,shon1251,Karanga,-20,31,Bantoid,Niger-Congo,Africa,ZW
+krn,kqz,kora1292,Korana,-29.5,20.5,Khoe-Kwadi,Khoe-Kwadi,Africa,ZA
+krr,kxa,kair1263,Kairiru,-3.333333333,143.5833333,Oceanic,Austronesian,Papunesia,PG
+kss,kss,sout2778,Kisi (Southern),8.5,-10.25,Mel,Niger-Congo,Africa,LR GN
+kte,kcv,kete1252,Kete,-7,22.83333333,Bantoid,Niger-Congo,Africa,CD
+ktp,zlm,mala1479,Ketapang,-1.866666667,110,Malayo-Sumbawan,Austronesian,Eurasia,ID
+kug,cmn,mand1415,Kunming,25,102.75,Chinese,Sino-Tibetan,Eurasia,CN
+kuk,bfa,bari1284,KukÃº,5.833333333,31.66666667,Nilotic,Eastern Sudanic,Africa,SD
+kum,kfy,kuma1273,Kumauni,30,80,Indic,Indo-European,Eurasia,IN
+kuy,vkt,teng1267,Kutai,-0.333333333,116.6666667,Malayo-Sumbawan,Austronesian,Papunesia,ID
+kuz,mbt,mati1250,Kulamanen,7.75,125,Greater Central Philippine,Austronesian,Papunesia,PH
+kwa,kwd,kwai1243,Kwaio,-8.95,161,Oceanic,Austronesian,Papunesia,SB
+kwn,kwn,kwan1273,Kwangali,-18,19.5,Bantoid,Niger-Congo,Africa,NA AO
+kwr,tnk,kwam1252,Kwamera,-19.58333333,169.4166667,Oceanic,Austronesian,Papunesia,VU
+kwy,kwy,sans1272,Iwoyo,-5.5,12.25,Bantoid,Niger-Congo,Africa,AO
+kxo,xuu,kxoe1243,Kxoe,-17.5,22.5,Khoe-Kwadi,Khoe-Kwadi,Africa,NA AO
+kyg,ken,keny1279,Kenyang,5.666666667,9.5,Bantoid,Niger-Congo,Africa,CM
+kyo,kny,kany1247,Kanyok,-7.333333333,23.58333333,Bantoid,Niger-Congo,Africa,CD
+lab,lbu,labu1248,Labu,-6.75,146.9166667,Oceanic,Austronesian,Papunesia,PG
+lan,laj,lang1324,Lango,2.166666667,33,Nilotic,Eastern Sudanic,Africa,UG
+lau,llu,lauu1247,Lau,-9.583333333,161.5,Oceanic,Austronesian,Papunesia,SB
+lbu,lun,lund1266,Lunda,-10.66666667,24,Bantoid,Niger-Congo,Africa,CD
+lda,lug,gand1255,Luganda,0.5,32.16666667,Bantoid,Niger-Congo,Africa,UG
+ldn,lld,ladi1250,Ladin,46.58333333,11.91666667,Romance,Indo-European,Eurasia,IT
+ldo,bdu,orok1266,Londo,5,9.166666667,Bantoid,Niger-Congo,Africa,CM
+leb,agh,ngel1238,Lebeo,1.75,25,Bantoid,Niger-Congo,Africa,CD
+leg,lea,lega1249,Lega,-2.833333333,27.16666667,Bantoid,Niger-Congo,Africa,CD
+len,tnl,lena1238,Lenakel,-19.45,169.25,Oceanic,Austronesian,Papunesia,VU
+lew,lww,lewo1242,Lewo,-16.75,168.3333333,Oceanic,Austronesian,Papunesia,VU
+lga,ojv,onto1237,Luangiua,-5.333333333,159.4166667,Oceanic,Austronesian,Papunesia,SB
+lge,nds,nort2627,Low German,53,10,Germanic,Indo-European,Eurasia,DE
+lgi,lag,lang1320,Langi,-4.5,36,Bantoid,Niger-Congo,Africa,TZ
+lgu,lgu,long1395,Longgu,-9.75,160.6666667,Oceanic,Austronesian,Papunesia,SB
+lin,lin,ling1263,Lingala,2,18.5,Bantoid,Niger-Congo,Africa,CD
+llm,lef,lele1264,Lelemi,7.333333333,0.5,Kwa,Niger-Congo,Africa,GH
+lma,lom,loma1260,Loma,8,-9.5,Western Mande,Mande,Africa,LR GN
+lmb,lam,lamb1271,Lamba,-13,28,Bantoid,Niger-Congo,Africa,CD ZM
+lmn,lmn,lamb1269,Lamani,17,77,Indic,Indo-European,Eurasia,IN
+lmu,lmu,lame1260,Lamen,-16.58333333,168.1666667,Oceanic,Austronesian,Papunesia,VU
+lnd,liy,band1344,Linda,6.5,20.75,Ubangi,Niger-Congo,Africa,CF
+lno,lad,ladi1251,Ladino,40,33,Romance,Indo-European,Eurasia,IL TR
+lns,lns,lamn1239,Lamnso',6.166666667,10.75,Bantoid,Niger-Congo,Africa,CM
+lnw,crc,lonw1238,Lonwolwol,-16.21666667,168,Oceanic,Austronesian,Papunesia,VU
+lok,lok,loko1255,Loko,9.333333333,-12.08333333,Western Mande,Mande,Africa,SL
+lon,los,loni1238,Loniu,-2.066666667,147.3333333,Oceanic,Austronesian,Papunesia,PG
+lou,loj,louu1245,Lou,-2.383333333,147.3166667,Oceanic,Austronesian,Papunesia,PG
+loz,loz,lozi1239,Lozi,-17.83333333,26,Bantoid,Niger-Congo,Africa,ZM
+luc,lch,luch1239,Lucazi,-14,20,Bantoid,Niger-Congo,Africa,AO
+luo,luo,luok1236,Luo,-0.5,34.75,Nilotic,Eastern Sudanic,Africa,TZ KE
+luv,lue,luva1239,Luvale,-12,22,Bantoid,Niger-Congo,Africa,AO
+lux,ltz,luxe1241,Luxemburgeois,49.83333333,6.166666667,Germanic,Indo-European,Eurasia,LU
+luy,luy,saam1283,Luyia,0.416666667,34.5,Bantoid,Niger-Congo,Africa,KE
+ma,msj,made1252,Ma,3.5,28,Ubangi,Niger-Congo,Africa,CD
+maa,mas,masa1300,Maasai,-3,36,Nilotic,Eastern Sudanic,Africa,KE TZ
+mae,mme,maee1241,Mae,-16,167.25,Oceanic,Austronesian,Papunesia,VU
+mai,mai,mait1250,Maithili,26,86,Indic,Indo-European,Eurasia,NP IN
+mal,plt,plat1254,Malagasy,-20,47,Barito,Austronesian,Africa,MG
+mao,mri,maor1246,Maori,-40,176,Oceanic,Austronesian,Papunesia,NZ
+mar,mrc,mari1440,Maricopa,33.16666667,-113.1666667,Yuman,Hokan,North America,US
+maw,mlq,west2500,Maninka (Western),13,-11,Western Mande,Mande,Africa,ML
+mba,mfc,mbaa1245,Mba,1,25,Ubangi,Niger-Congo,Africa,CD
+mbe,mdt,mber1257,Mbere,-0.5,14,Bantoid,Niger-Congo,Africa,GA CG
+mbi,baw,bamb1266,Mbili,6.116666667,10.2,Bantoid,Niger-Congo,Africa,CM
+mbl,mdq,mbol1247,Mbole,-0.666666667,24.66666667,Bantoid,Niger-Congo,Africa,CD
+mbz,mtk,mbee1250,Mbe',6.283333333,11.08333333,Bantoid,Niger-Congo,Africa,CM
+mde,men,mend1266,Mende,7.833333333,-11.5,Western Mande,Mande,Africa,SL
+mdk,mnk,mand1436,Mandinka,13,-15.66666667,Western Mande,Mande,Africa,ML SN GN
+mdr,mad,nucl1460,Madurese,-7,113.5,Malayo-Sumbawan,Austronesian,Papunesia,ID
+mds,xmm,mala1481,Manadonese,1.5,124.8333333,Malayo-Sumbawan,Austronesian,Papunesia,ID
+mdu,muh,mund1326,MÃ¼ndÃ¼,4.5,30,Ubangi,Niger-Congo,Africa,SD CD
+mdw,mdw,mbos1242,Mbosi,-1.25,15.5,Bantoid,Niger-Congo,Africa,CG
+mga,ndt,ndun1249,Mondunga,2.25,21.5,Ubangi,Niger-Congo,Africa,CD
+mgd,mog,mong1342,Mongondow,0.666666667,124,Greater Central Philippine,Austronesian,Papunesia,ID
+mgh,mag,maga1260,Magahi,23.5,85.5,Indic,Indo-European,Eurasia,IN
+mgk,mhk,mung1266,Mungaka,5.916666667,10,Bantoid,Niger-Congo,Africa,CM
+mgn,mdh,magu1243,Magindanao,6.833333333,124.5,Greater Central Philippine,Austronesian,Papunesia,PH
+mgo,lol,mong1338,Mongo,0,21,Bantoid,Niger-Congo,Africa,CD
+mhi,mar,mara1378,Marathi,19,76,Indic,Indo-European,Eurasia,IN
+mhu,lnb,mbal1255,Mbalanhu,-17.5,15,Bantoid,Niger-Congo,Africa,NA
+min,min,mina1268,Minangkabau,-1,101,Malayo-Sumbawan,Austronesian,Papunesia,ID
+mit,zmq,mitu1240,Mituku,-1.666666667,25.5,Bantoid,Niger-Congo,Africa,CD
+mjk,mfv,mand1419,Manjaku,12,-16.25,Northern Atlantic,Niger-Congo,Africa,GW
+mka,mxx,maho1249,Mauka,8.333333333,-7.5,Western Mande,Mande,Africa,CI
+mkd,kde,mako1251,Makonde,-11,40,Bantoid,Niger-Congo,Africa,MZ TZ
+mke,mek,meke1243,Mekeo,-8.333333333,146.5,Oceanic,Austronesian,Papunesia,PG
+mkg,mnk,mand1436,Mandinka (Gambian),13.41666667,-16,Western Mande,Mande,Africa,GM
+mkn,knf,mank1251,Mankanya,12.08333333,-15.91666667,Northern Atlantic,Niger-Congo,Africa,GW
+mkq,nge,ngem1255,Mankon,6,10.16666667,Bantoid,Niger-Congo,Africa,CM
+mkz,mcp,maka1304,Makaa,3.416666667,12.25,Bantoid,Niger-Congo,Africa,CM
+mla,mcu,nige1255,Mambila,6.75,11.5,Bantoid,Niger-Congo,Africa,CM NG
+mlu,mgl,male1289,Maleu,-5.716666667,148.4166667,Oceanic,Austronesian,Papunesia,PG
+mly,zsm,stan1306,Malay,3,102,Malayo-Sumbawan,Austronesian,Eurasia,MY
+mmb,mna,mbul1263,Mangap-Mbula,-5.666666667,148.0833333,Oceanic,Austronesian,Papunesia,PG
+mmn,mmn,mama1275,Mamanwa,9.416666667,125.5,Greater Central Philippine,Austronesian,Papunesia,PH
+mmu,zmi,nege1240,Malay (Ulu Muar),2.666666667,102.5,Malayo-Sumbawan,Austronesian,Eurasia,MY
+mmw,mgr,mamb1296,Mambwe,-9.083333333,31.16666667,Bantoid,Niger-Congo,Africa,TZ ZM
+mnd,cmn,mand1415,Mandarin,34,110,Chinese,Sino-Tibetan,Eurasia,CN
+mnk,emk,east2426,Maninka,10.5,-9.5,Western Mande,Mande,Africa,GN SL
+mnm,mva,mana1295,Manam,-4,145,Oceanic,Austronesian,Papunesia,PG
+mnv,mvn,mina1269,Minaveha,-9.6,150.4666667,Oceanic,Austronesian,Papunesia,PG
+mnz,moj,monz1249,Munzombo,3,18.41666667,Ubangi,Niger-Congo,Africa,CG
+moa,mte,mono1273,Mono-Alu,-7.05,155.75,Oceanic,Austronesian,Papunesia,SB
+moj,mov,moha1256,Mojave,34.66666667,-114.5833333,Yuman,Hokan,North America,US
+mok,mkj,moki1238,Mokilese,6.666666667,159.75,Oceanic,Austronesian,Papunesia,FM
+mol,ron,roma1327,Moldavian,47,29,Romance,Indo-European,Eurasia,MD
+mpo,mye,myen1241,Mpongwe,-1.25,9.5,Bantoid,Niger-Congo,Africa,GA
+mrn,mrw,mara1404,Maranao,7.833333333,124.25,Greater Central Philippine,Austronesian,Papunesia,PH
+mrq,mrq,sout2866,Marquesan,-8.916666667,-140.0833333,Oceanic,Austronesian,Papunesia,PF
+msh,mah,mars1254,Marshallese,7.116666667,171.05,Oceanic,Austronesian,Papunesia,MH
+msm,msu,muso1238,Musom,-6.583333333,147,Oceanic,Austronesian,Papunesia,PG
+msn,mbq,mais1250,Maisin,-9.5,149.1666667,Oceanic,Austronesian,Papunesia,PG
+mtb,mgw,matu1259,Matuumbi,-8.5,39,Bantoid,Niger-Congo,Africa,TZ
+mtk,mjk,matu1261,Matukar,-4.916666667,145.75,Oceanic,Austronesian,Papunesia,PG
+mtu,meu,motu1246,Motu,-9.333333333,147,Oceanic,Austronesian,Papunesia,PG
+mua,xsq,makh1264,Makua,-15,38.66666667,Bantoid,Niger-Congo,Africa,MZ
+mud,mnf,mund1327,Mundani,5.666666667,9.916666667,Bantoid,Niger-Congo,Africa,CM
+mus,emi,muss1246,Mussau,-1.45,149.6166667,Oceanic,Austronesian,Papunesia,PG
+muy,myw,muyu1244,Muyuw,-9.083333333,152.75,Oceanic,Austronesian,Papunesia,PG
+mwb,mbb,west2555,Manobo (Western Bukidnon),7.666666667,124.75,Greater Central Philippine,Austronesian,Papunesia,PH
+mwc,mke,mawc1242,Mawchi,21.33333333,73.66666667,Indic,Indo-European,Eurasia,IN
+mwe,mwe,mwer1248,Mwera,-9,39,Bantoid,Niger-Congo,Africa,TZ
+mwo,mlv,motl1237,Mwotlap,-13.58333333,167.5833333,Oceanic,Austronesian,Papunesia,VU
+mxe,mxe,mele1250,Ifira-Mele,-17.75,168.25,Oceanic,Austronesian,Papunesia,VU
+myg,mdm,mayo1261,Mayogo,3,29,Ubangi,Niger-Congo,Africa,CD
+myk,zlm,mala1479,Malay (Kuala Lumpur),3.166666667,101.7,Malayo-Sumbawan,Austronesian,Eurasia,MY
+mym,mal,mala1464,Malayalam,10,76.5,Southern Dravidian,Dravidian,Eurasia,IN
+myn,mhy,maan1238,Ma'anyan,-2,115,Barito,Austronesian,Papunesia,ID
+nak,nak,naka1262,Nakanai,-5.583333333,150.5833333,Oceanic,Austronesian,Papunesia,PG
+nal,nal,nali1244,Nalik,-2.95,151.3333333,Oceanic,Austronesian,Papunesia,PG
+nan,kln,nand1266,Nandi,0.25,35,Nilotic,Eastern Sudanic,Africa,KE
+nau,nau,naur1243,Nauruan,-0.5,166.9166667,Oceanic,Austronesian,Papunesia,NR
+nbb,nmb,bign1238,Nambas (Big),-16.08333333,167.2,Oceanic,Austronesian,Papunesia,VU
+nbe,ngc,ngom1268,Ngombe,3,23,Bantoid,Niger-Congo,Africa,CD
+nbk,stc,natu1249,NatÃ¼gu,-10.78333333,165.8666667,Oceanic,Austronesian,Papunesia,SB
+nbm,nbm,ngba1284,Ngbaka (Ma'bo),3.56,18.36,Ubangi,Niger-Congo,Africa,CD
+nbo,now,nyam1277,Nyambo,-1,31.33333333,Bantoid,Niger-Congo,Africa,TZ
+ndb,nbl,sout2808,Ndebele (in South Africa),-25.33333333,29,Bantoid,Niger-Congo,Africa,ZA
+nde,nnb,nand1264,Nande,-0.083333333,29.16666667,Bantoid,Niger-Congo,Africa,CD
+ndg,ndz,ndog1248,Ndogo,7.75,27,Ubangi,Niger-Congo,Africa,SD
+ndi,ngb,nort2774,Ngbandi,3.75,22,Ubangi,Niger-Congo,Africa,CD
+ndo,ndo,ndon1254,Ndonga,-18,17,Bantoid,Niger-Congo,Africa,AO NA
+ndr,fij,fiji1243,Nadroga,-18.08333333,177.4166667,Oceanic,Austronesian,Papunesia,FJ
+ndt,ndv,ndut1239,Ndut,14.91666667,-16.91666667,Northern Atlantic,Niger-Congo,Africa,SN
+ndu,nmd,ndum1239,Ndumu,-1.666666667,13.58333333,Bantoid,Niger-Congo,Africa,GA
+neh,nsn,neha1247,Nehan,-4.5,154.2,Oceanic,Austronesian,Papunesia,PG
+nel,nee,kuma1276,Nelemwa,-20.25,164.0833333,Oceanic,Austronesian,Papunesia,NC
+nep,nep,nepa1252,Nepali,28,85,Indic,Indo-European,Eurasia,NP
+nge,nge,ngem1255,Ngemba,6.2,10,Bantoid,Niger-Congo,Africa,CM
+ngn,nid,ngan1295,Ngandi,-13.83333333,135,Ngandi,Gunwinyguan,Australia,AU
+ngo,ngo,ngon1269,Ngoni,-11,36,Bantoid,Niger-Congo,Africa,MZ TZ
+ngu,llp,nort2836,Nguna,-16.91666667,168.5,Oceanic,Austronesian,Papunesia,VU
+nif,num,niua1240,Niuafo'ou,-15.56666667,-175.6166667,Oceanic,Austronesian,Papunesia,TO
+niu,niu,niue1239,Niuean,-19.05,-170.1166667,Oceanic,Austronesian,Papunesia,NZ
+nke,isi,nkem1242,Nkem,6.583333333,8.583333333,Bantoid,Niger-Congo,Africa,NG
+nkn,nko,nkon1245,Nkonya,7.166666667,0.25,Kwa,Niger-Congo,Africa,GH
+nko,cgg,chig1238,Nkore-Kiga,-0.916666667,29.83333333,Bantoid,Niger-Congo,Africa,UG
+nkr,nkr,nuku1260,Nukuoro,3.833333333,154.9166667,Oceanic,Austronesian,Papunesia,FM
+nne,nen,neng1238,Nengone,-21.5,168,Oceanic,Austronesian,Papunesia,NC
+nng,nyj,nyan1304,Nyanga,-1.25,28.16666667,Bantoid,Niger-Congo,Africa,CD
+nnm,tvl,tuva1244,Nanumea,-5.666666667,176.1166667,Oceanic,Austronesian,Papunesia,TV
+non,nhu,noon1243,Noni,6.416666667,10.58333333,Bantoid,Niger-Congo,Africa,CM
+noo,snf,noon1242,Noon,14.83333333,-16.83333333,Northern Atlantic,Niger-Congo,Africa,SN
+nor,nob,norw1259,Norwegian,61,8,Germanic,Indo-European,Eurasia,NO
+nro,nhr,naro1249,Nharo,-22.33333333,20.5,Khoe-Kwadi,Khoe-Kwadi,Africa,NA BW
+nse,nse,nsen1242,Nsenga,-14.5,30.83333333,Bantoid,Niger-Congo,Africa,ZM
+nto,nto,ntom1248,Ntomba,-2,18.33333333,Bantoid,Niger-Congo,Africa,CD
+nue,nus,nuer1246,Nuer,8.333333333,32,Nilotic,Eastern Sudanic,Africa,SD ET
+nyh,nih,nyih1240,Nyiha,-10,33,Bantoid,Niger-Congo,Africa,ZM TZ
+nyl,yly,nyal1254,NyelÃ¢yu,-20.33333333,164.3333333,Oceanic,Austronesian,Papunesia,NC
+nym,nym,nyam1276,Nyamwezi,-5,33,Bantoid,Niger-Congo,Africa,TZ
+nza,nzk,nzak1247,Nzakara,5,23,Ubangi,Niger-Congo,Africa,CD CF
+obg,ogu,ogbr1243,Ogbronuagum,4.75,6.866666667,Cross River,Niger-Congo,Africa,NG
+obo,ann,obol1243,Obolo,4.583333333,7.833333333,Cross River,Niger-Congo,Africa,NG
+occ,oci,occi1239,Occitan,44,2,Romance,Indo-European,Eurasia,FR
+ogb,ogb,ogbi1239,Ogbia,4.666666667,6.25,Cross River,Niger-Congo,Africa,NG
+oko,ort,adiv1239,Oriya (Kotia),18.33333333,83,Indic,Indo-European,Eurasia,IN
+oku,oku,okuu1243,Oku,6.25,10.5,Bantoid,Niger-Congo,Africa,CM
+olm,nij,ngaj1237,Oloh Mangtangai,-0.833333333,113,Barito,Austronesian,Papunesia,ID
+oya,ori,nucl1284,Oriya,21,85,Indic,Indo-European,Eurasia,IN
+pan,pan,panj1256,Panjabi,31,74,Indic,Indo-European,Eurasia,IN PK
+par,lkr,pari1256,PÃ¤ri,5,32.5,Nilotic,Eastern Sudanic,Africa,SD
+pat,ptp,pate1247,Patep,-6.916666667,146.5833333,Oceanic,Austronesian,Papunesia,PG
+pgl,pif,ping1243,Pingilapese,6.216666667,160.7,Oceanic,Austronesian,Papunesia,FM
+pil,piv,pile1238,Pileni,-10.21666667,166.2166667,Oceanic,Austronesian,Papunesia,SB
+pkt,pko,poko1263,Pokot,1.5,35.5,Nilotic,Eastern Sudanic,Africa,UG KE
+plp,nij,ngaj1237,Pulopetak,1.416666667,109.8333333,Barito,Austronesian,Papunesia,ID
+plr,fap,palo1243,Palor,14.83333333,-16.75,Northern Atlantic,Niger-Congo,Africa,SN
+pms,pma,paam1238,Paamese,-16.5,168.25,Oceanic,Austronesian,Papunesia,VU
+png,pbr,pang1287,Pangwa,-10,34.75,Bantoid,Niger-Congo,Africa,TZ
+poa,fwa,fwai1237,Po-Ai,-20.66666667,164.8333333,Oceanic,Austronesian,Papunesia,NC
+pog,poy,pogo1243,Pogoro,-8.75,36.5,Bantoid,Niger-Congo,Africa,TZ
+poh,pon,pohn1238,Pohnpeian,6.883333333,158.25,Oceanic,Austronesian,Papunesia,FM
+por,por,port1283,Portuguese,39,-8,Romance,Indo-European,Eurasia,PT
+pre,asa,asut1235,Pare,-4,36.5,Bantoid,Niger-Congo,Africa,TZ
+pro,oci,occi1239,ProvenÃ§al,44,6,Romance,Indo-European,Eurasia,FR
+psw,psw,port1285,Port Sandwich,-16.5,167.75,Oceanic,Austronesian,Papunesia,VU
+pta,duf,dumb1241,Paita,-22.08333333,166.5,Oceanic,Austronesian,Papunesia,NC
+ptp,gfk,patp1243,Patpatar,-3.766666667,152.5,Oceanic,Austronesian,Papunesia,PG
+pul,puw,pulu1242,Puluwat,7.333333333,149.3333333,Oceanic,Austronesian,Papunesia,FM
+que,yum,quec1382,Quechan,32.83333333,-114.3333333,Yuman,Hokan,North America,US
+rad,rad,rade1240,Rade,13,108.5,Malayo-Sumbawan,Austronesian,Eurasia,VN
+rag,lml,hano1246,Raga,-15.5,168.1666667,Oceanic,Austronesian,Papunesia,VU
+rap,rap,rapa1244,Rapanui,-27.11666667,-109.3666667,Oceanic,Austronesian,Papunesia,CL
+rav,rmn,balk1252,Romani (Ajia Varvara),38,23.58333333,Indic,Indo-European,Eurasia,GR
+rbg,rmo,sint1235,Romani (Burgenland),47.5,16.5,Indic,Indo-European,Eurasia,AT
+rbu,rmn,balk1252,Romani (Bugurdzi),42.66666667,21.16666667,Indic,Indo-European,Eurasia,RS
+rga,rng,rong1268,Ronga,-26,32.5,Bantoid,Niger-Congo,Africa,MZ
+rgn,rog,nort2994,Roglai (Northern),12.16666667,108.8333333,Malayo-Sumbawan,Austronesian,Eurasia,VN
+rim,rim,nyat1246,Rimi,-5,34.66666667,Bantoid,Niger-Congo,Africa,TZ
+rka,rmy,vlax1238,Romani (Kalderash),45,21,Indic,Indo-European,Eurasia,RS
+rlo,rmy,vlax1238,Romani (Lovari),47,21.5,Indic,Indo-European,Eurasia,RO HU
+rmc,roh,roma1326,Romansch,46.66666667,9.166666667,Romance,Indo-European,Eurasia,CH
+rnd,run,rund1242,Rundi,-3.5,30,Bantoid,Niger-Congo,Africa,BI
+rnn,mnv,renn1242,Rennellese,-11.61666667,160.25,Oceanic,Austronesian,Papunesia,SB
+rnr,rml,balt1257,Romani (North Russian),60,38,Indic,Indo-European,Eurasia,RU
+rny,nyn,nyan1307,Runyankore,-0.5,30.5,Bantoid,Niger-Congo,Africa,UG
+rom,ron,roma1327,Romanian,46,25,Romance,Indo-European,Eurasia,RO
+ror,rro,waim1251,Roro,-8.75,146.5833333,Oceanic,Austronesian,Papunesia,PG
+rot,rtm,rotu1241,Rotuman,-12.5,177.0666667,Oceanic,Austronesian,Papunesia,FJ
+rov,rug,rovi1238,Roviana,-8.25,157.3333333,Oceanic,Austronesian,Papunesia,SB
+rru,nyo,nyor1246,Runyoro-Rutooro,1.5,31.33333333,Bantoid,Niger-Congo,Africa,UG
+rsc,roh,roma1326,Romansch (Scharans),46.75,9.5,Romance,Indo-European,Eurasia,CH
+rse,,,Romani (Sepecides),38.25,27,Indic,Indo-European,,TR
+rsm,roh,roma1326,Romansch (Surmeiran),46.58333333,9.75,Romance,Indo-European,Eurasia,CH
+rsu,roh,roma1326,Romansch (Sursilvan),46.66666667,8.833333333,Romance,Indo-European,Eurasia,CH
+rwe,rmw,wels1246,Romani (Welsh),52,-4,Indic,Indo-European,Eurasia,GB
+saa,apb,saaa1240,Sa'a,-9.616666667,161.45,Oceanic,Austronesian,Papunesia,SB
+sak,sku,saka1289,Sakao,-15.16666667,167.0833333,Oceanic,Austronesian,Papunesia,VU
+sam,smo,samo1305,Samoan,-13.91666667,-171.8333333,Oceanic,Austronesian,Papunesia,AS WS
+san,sag,sang1328,Sango,5,18,Ubangi,Niger-Congo,Africa,CF
+sav,sdg,savi1242,Savi,35,71.5,Indic,Indo-European,Eurasia,AF
+sdh,snd,sind1272,Sindhi,26,69,Indic,Indo-European,Eurasia,PK IN
+sea,tvk,sout2859,Southeast Ambrym,-16.3,168.2166667,Oceanic,Austronesian,Papunesia,VU
+seb,kpz,kups1238,Sebei,1.333333333,34.58333333,Nilotic,Eastern Sudanic,Africa,UG
+sen,seh,nucl1396,Sena,-18,35.25,Bantoid,Niger-Congo,Africa,MZ
+ses,sot,sout2807,Sesotho,-28,27,Bantoid,Niger-Congo,Africa,ZA LS
+sge,sop,song1303,Songe,-6.833333333,22,Bantoid,Niger-Congo,Africa,CD
+sgl,szg,seng1278,Sengele,-1.833333333,17.33333333,Bantoid,Niger-Congo,Africa,CD
+sgu,snq,sang1333,Sangu,-1.5,11.83333333,Bantoid,Niger-Congo,Africa,GA
+shl,shk,shil1265,Shilluk,9.666666667,31.75,Nilotic,Eastern Sudanic,Africa,SD
+shm,ksb,sham1280,Shambala,-4.25,38.25,Bantoid,Niger-Congo,Africa,TZ
+shn,sna,shon1251,Shona,-18,31,Bantoid,Niger-Congo,Africa,ZW
+sio,xsi,sioo1240,Sio,-5.95,147.3333333,Oceanic,Austronesian,Papunesia,PG
+sir,sjr,siar1238,Siar,-4.666666667,152.9166667,Oceanic,Austronesian,Papunesia,PG
+sis,baa,baba1268,Sisiqa,-7,156.8333333,Oceanic,Austronesian,Papunesia,SB
+skm,suk,suku1261,Sukuma,-2.833333333,32,Bantoid,Niger-Congo,Africa,TZ
+sku,sub,suku1259,Suku,-6,17.66666667,Bantoid,Niger-Congo,Africa,AO CD
+skw,swv,shek1243,Shekhawati,28,75.5,Indic,Indo-European,Eurasia,IN
+slb,sbe,sali1295,Saliba (in Papua New Guinea),-10.58333333,150.7166667,Oceanic,Austronesian,Papunesia,PG
+sna,scl,shin1264,Shina,36,74,Indic,Indo-European,Eurasia,PK
+sng,snc,sina1266,Sinaugoro,-9.833333333,147.8333333,Oceanic,Austronesian,Papunesia,PG
+snh,sin,sinh1246,Sinhala,7,80.5,Indic,Indo-European,Eurasia,LK
+snn,snk,soni1259,Soninke,15,-10.5,Western Mande,Mande,Africa,CI SN BF ML
+sob,sob,sobe1238,Sobei,-1.916666667,138.75,Oceanic,Austronesian,Papunesia,ID
+son,sov,sons1242,Sonsorol-Tobi,5.333333333,132.25,Oceanic,Austronesian,Papunesia,PW
+spa,spa,stan1288,Spanish,40,-4,Romance,Indo-European,Eurasia,ES
+spc,spa,stan1288,Spanish (Canary Islands),28,-15.58333333,Romance,Indo-European,Eurasia,ES
+srd,sro,camp1261,Sardinian,40,9,Romance,Indo-European,Eurasia,IT
+stn,nso,pedi1238,Sotho (Northern),-24,29,Bantoid,Niger-Congo,Africa,ZA
+sub,sbs,subi1246,Subiya,-17.75,24.91666667,Bantoid,Niger-Congo,Africa,NA
+sud,tgo,sude1239,Sudest,-11.5,153.45,Oceanic,Austronesian,Papunesia,PG
+sun,sun,sund1252,Sundanese,-7,107,Malayo-Sumbawan,Austronesian,Papunesia,ID
+sur,sgz,surs1246,Sursurunga,-4,152.7666667,Oceanic,Austronesian,Papunesia,PG
+sus,sus,susu1250,Susu,10,-13,Western Mande,Mande,Africa,GN
+swa,swh,swah1253,Swahili,-6.5,39,Bantoid,Niger-Congo,Africa,TZ
+swe,swe,swed1254,Swedish,60,15,Germanic,Indo-European,Eurasia,FI SE
+swt,ssw,swat1243,Swati,-26.5,31,Bantoid,Niger-Congo,Africa,ZA SZ
+swv,swe,swed1254,Swedish (VÃ¤sterbotten),64.25,19.75,Germanic,Indo-European,Eurasia,SE
+taf,sps,sapo1253,Taiof,-5.533333333,154.6333333,Oceanic,Austronesian,Papunesia,PG
+tag,tgl,taga1270,Tagalog,15,121,Greater Central Philippine,Austronesian,Papunesia,PH
+tah,tah,tahi1242,Tahitian,-17.66666667,-149.5833333,Oceanic,Austronesian,Papunesia,PF
+tak,tbc,taki1248,Takia,-4.666666667,146,Oceanic,Austronesian,Papunesia,PG
+tal,tlj,tali1258,Talinga,0.416666667,29.66666667,Bantoid,Niger-Congo,Africa,UG CD
+taq,nan,minn1241,Taiwanese,25,121.5,Chinese,Sino-Tibetan,Eurasia,TW
+taw,tbo,tawa1275,Tawala,-10.33333333,150.6666667,Oceanic,Austronesian,Papunesia,PG
+tbt,tti,toba1266,Tobati,-2.583333333,140.6666667,Oceanic,Austronesian,Papunesia,ID
+tbw,tap,taab1238,Tabwa,-8,29.5,Bantoid,Niger-Congo,Africa,ZM CD
+tda,tcx,toda1252,Toda,11.41666667,76.75,Southern Dravidian,Dravidian,Eurasia,IN
+teo,tio,teop1238,Teop,-5.666666667,155,Oceanic,Austronesian,Papunesia,PG
+tes,teo,teso1249,Teso,1.833333333,33.83333333,Nilotic,Eastern Sudanic,Africa,UG
+tet,tll,tete1250,Tetela,-4,24,Bantoid,Niger-Congo,Africa,CD
+tga,tgg,tang1348,Tangga,-3.466666667,153.2,Oceanic,Austronesian,Papunesia,PG
+tgb,tbw,tagb1258,Tagbanwa (Aborlan),9.5,118.5,Greater Central Philippine,Austronesian,Papunesia,PH
+tgk,tgc,tiga1245,Tigak,-2.716666667,150.8,Oceanic,Austronesian,Papunesia,PG
+tgo,tsv,tsog1243,Tsogo,-1.5,11.33333333,Bantoid,Niger-Congo,Africa,GA
+tik,tik,tika1246,Tikar,5.833333333,11.66666667,Bantoid,Niger-Congo,Africa,CM
+tin,cir,tiri1258,Tinrin,-21.66666667,165.75,Oceanic,Austronesian,Papunesia,NC
+tiv,tiv,tivv1240,Tiv,7.5,9,Bantoid,Niger-Congo,Africa,NG
+tja,dih,kumi1248,Tiipay (Jamul),32.16666667,-116.5,Yuman,Hokan,North America,US MX
+tke,tkl,toke1240,Tokelauan,-9,-172,Oceanic,Austronesian,Papunesia,TK
+tki,bag,tuki1240,Tuki,4.583333333,11.5,Bantoid,Niger-Congo,Africa,CM
+tks,kkw,teke1280,Teke (Southern),-2.333333333,14.5,Bantoid,Niger-Congo,Africa,CG
+tla,ksd,kuan1248,Tolai,-4.25,152.0833333,Oceanic,Austronesian,Papunesia,PG
+tml,tam,tami1289,Tamil,11,78.5,Southern Dravidian,Dravidian,Eurasia,LK IN
+tmm,mla,malo1243,Tamabo,-15.66666667,167.1666667,Oceanic,Austronesian,Papunesia,VU
+tna,tuv,turk1308,Turkana,3,35.5,Nilotic,Eastern Sudanic,Africa,KE UG
+tne,tem,timn1235,Temne,8.666666667,-13.08333333,Mel,Niger-Congo,Africa,SL
+tng,ton,tong1325,Tongan,-21.16666667,-175.1666667,Oceanic,Austronesian,Papunesia,TO
+tnk,lcm,tung1290,Tungak,-2.55,150.25,Oceanic,Austronesian,Papunesia,PG
+tnn,baz,tune1241,Tunen,4.75,10.66666667,Bantoid,Niger-Congo,Africa,CM
+tns,nwi,sout2869,Tanna (Southwest),-19.56666667,169.3333333,Oceanic,Austronesian,Papunesia,VU
+toq,mlu,toab1237,Toqabaqita,-8.416666667,160.5833333,Oceanic,Austronesian,Papunesia,SB
+toz,toi,tong1318,Tonga (in Zambia),-17,27,Bantoid,Niger-Congo,Africa,ZM
+trw,trw,torw1241,Torwali,34.25,72,Indic,Indo-European,Eurasia,PK
+tsg,tsg,taus1251,Tausug,6,121,Greater Central Philippine,Austronesian,Papunesia,PH MY ID
+tsn,tso,tson1249,Tsonga,-24,32,Bantoid,Niger-Congo,Africa,MZ ZA
+tsp,tam,tami1289,Tamil (Spoken),11,78,Southern Dravidian,Dravidian,Eurasia,IN
+tst,huq,tsat1238,Tsat,18.25,109.5,Malayo-Sumbawan,Austronesian,Eurasia,CN
+tsw,tsn,tswa1253,Tswana,-24,26,Bantoid,Niger-Congo,Africa,BW ZA
+tua,pmt,tuam1242,Tuamotuan,-17,-144,Oceanic,Austronesian,Papunesia,PF
+tul,tcy,tulu1258,Tulu,12.75,75.33333333,Southern Dravidian,Dravidian,Eurasia,IN
+tum,tmq,tuml1238,Tumleo,-3.083333333,142.4166667,Oceanic,Austronesian,Papunesia,PG
+tvl,tvl,tuva1244,Tuvaluan,-8.5,179.1666667,Oceanic,Austronesian,Papunesia,TV
+uli,uli,ulit1238,Ulithian,9.916666667,139.5833333,Oceanic,Austronesian,Papunesia,FM
+umb,umb,umbu1257,UMbundu,-12.5,15,Bantoid,Niger-Congo,Africa,AO
+ura,uur,urav1235,Ura,-18.66666667,169.0833333,Oceanic,Austronesian,Papunesia,VU
+urd,urd,urdu1245,Urdu,25,67,Indic,Indo-European,Eurasia,PK
+url,urk,urak1238,Urak Lawoi',8,98.33333333,Malayo-Sumbawan,Austronesian,Eurasia,TH
+vai,vai,vaii1241,Vai,6.916666667,-11.25,Western Mande,Mande,Africa,SL LR
+vas,vas,vasa1239,Vasavi,24.5,71.5,Indic,Indo-European,Eurasia,IN
+ved,ved,vedd1240,Vedda,7,81,Indic,Indo-European,Eurasia,LK
+ven,ven,vend1245,Venda,-22,30,Bantoid,Niger-Congo,Africa,ZW ZA
+vif,vif,vili1238,Vili,-5.5,14,Bantoid,Niger-Congo,Africa,GA CG
+vnm,vnm,vinm1237,Vinmavis,-16.16666667,167.4166667,Oceanic,Austronesian,Papunesia,VU
+wed,wed,weda1241,Wedau,-10.16666667,150.1666667,Oceanic,Austronesian,Papunesia,PG
+wlf,wol,nucl1347,Wolof,15.25,-16,Northern Atlantic,Niger-Congo,Africa,SN GM
+wll,wls,wall1257,Wallisian,-13.3,-176.2,Oceanic,Austronesian,Papunesia,WF
+wmn,wem,weme1239,WÃ©mÃ©nugbÃ©,6.666666667,2.5,Kwa,Niger-Congo,Africa,BJ
+wol,woe,wole1240,Woleaian,7.333333333,143.8333333,Oceanic,Austronesian,Papunesia,FM
+wuc,wuu,wuch1236,Wu (Changzhou),31.66666667,119.9166667,Chinese,Sino-Tibetan,Eurasia,CN
+wwy,war,wara1300,Waray-Waray,12,125,Greater Central Philippine,Austronesian,Papunesia,PH
+xar,ane,xara1244,XÃ¢rÃ¢cÃ¹Ã¹,-21.66666667,166,Oceanic,Austronesian,Papunesia,NC
+xas,kao,xaas1235,Xasonga,14.25,-10.5,Western Mande,Mande,Africa,ML SN
+xho,xho,xhos1239,Xhosa,-32,27,Bantoid,Niger-Congo,Africa,ZA
+xia,nan,minn1241,Xiamen,24.5,118.1666667,Chinese,Sino-Tibetan,Eurasia,CN
+yak,yaf,yaka1269,Yaka,-7,17.5,Bantoid,Niger-Congo,Africa,AO CD
+yao,yao,yaoo1241,Yao (in Malawi),-14.5,35.5,Bantoid,Niger-Congo,Africa,MW MZ
+yav,yuf,hava1248,Yavapai,34,-113.3333333,Yuman,Hokan,North America,US
+yba,yam,yamb1251,Yamba,6.416666667,11.08333333,Bantoid,Niger-Congo,Africa,CM
+ydb,ydd,east2295,Yiddish (Bessarabian),47,28.5,Germanic,Indo-European,Eurasia,MD
+ydd,ydd,yidd1255,Yiddish,52,23,Germanic,Indo-European,Eurasia,LT PL DE BY UA
+ydl,ydd,east2295,Yiddish (Lodz),51.75,19.41666667,Germanic,Indo-European,Eurasia,PL
+yem,ybb,yemb1246,Yemba,5.416666667,10.08333333,Bantoid,Niger-Congo,Africa,CM
+yey,yey,yeyi1239,Yeyi,-20,23.5,Bantoid,Niger-Congo,Africa,BW NA
+ykm,yky,yako1252,Yakoma,4.416666667,18.41666667,Ubangi,Niger-Congo,Africa,CF
+ylt,ydd,east2295,Yiddish (Lithuanian),55,25,Germanic,Indo-European,Eurasia,LT
+yns,yns,yans1239,Yansi,-3.833333333,18,Bantoid,Niger-Congo,Africa,CD
+yor,yor,yoru1245,Yoruba,8,4.333333333,Defoid,Niger-Congo,Africa,NG BJ
+zan,zne,zand1248,Zande,4,26,Ubangi,Niger-Congo,Africa,SD CF CD
+zno,zul,zulu1248,Zulu (Northern),-28,31,Bantoid,Niger-Congo,Africa,ZA
+zso,zul,zulu1248,Zulu (Southern),-31,30,Bantoid,Niger-Congo,Africa,ZA
+zul,zul,zulu1248,Zulu,-30,30,Bantoid,Niger-Congo,Africa,ZA
