@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 1250px;
+                 background-color: #03001C;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#DDDDDD", "font": {"color": "#FFF2F2"}, "id": "Western Mande", "label": "Western Mande", "shape": "dot", "size": 55, "title": "Western Mande"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Susu", "label": "Susu", "shape": "dot", "size": 25, "title": "Susu"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Koranko", "label": "Koranko", "shape": "dot", "size": 25, "title": "Koranko"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Loko", "label": "Loko", "shape": "dot", "size": 25, "title": "Loko"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Dyula", "label": "Dyula", "shape": "dot", "size": 25, "title": "Dyula"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Xasonga", "label": "Xasonga", "shape": "dot", "size": 25, "title": "Xasonga"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Bambara", "label": "Bambara", "shape": "dot", "size": 25, "title": "Bambara"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Mauka", "label": "Mauka", "shape": "dot", "size": 25, "title": "Mauka"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Bobo Madar\u00c3\u0192\u00c2\u00a9 (Northern)", "label": "Bobo Madar\u00c3\u0192\u00c2\u00a9 (Northern)", "shape": "dot", "size": 25, "title": "Bobo Madar\u00c3\u0192\u00c2\u00a9 (Northern)"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Bandi", "label": "Bandi", "shape": "dot", "size": 25, "title": "Bandi"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Mandinka (Gambian)", "label": "Mandinka (Gambian)", "shape": "dot", "size": 25, "title": "Mandinka (Gambian)"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Jeli", "label": "Jeli", "shape": "dot", "size": 25, "title": "Jeli"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Bozo (Tigemaxo)", "label": "Bozo (Tigemaxo)", "shape": "dot", "size": 25, "title": "Bozo (Tigemaxo)"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Kpelle", "label": "Kpelle", "shape": "dot", "size": 25, "title": "Kpelle"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Maninka (Western)", "label": "Maninka (Western)", "shape": "dot", "size": 25, "title": "Maninka (Western)"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Soninke", "label": "Soninke", "shape": "dot", "size": 25, "title": "Soninke"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Vai", "label": "Vai", "shape": "dot", "size": 25, "title": "Vai"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Gullah ", "label": "Gullah ", "shape": "dot", "size": 20, "title": "Gullah "}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Mende", "label": "Mende", "shape": "dot", "size": 25, "title": "Mende"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Mandinka", "label": "Mandinka", "shape": "dot", "size": 25, "title": "Mandinka"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Santiago Creole", "label": "Santiago Creole", "shape": "dot", "size": 20, "title": "Santiago Creole"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Cape Verdean Creole", "label": "Cape Verdean Creole", "shape": "dot", "size": 20, "title": "Cape Verdean Creole"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Maninka", "label": "Maninka", "shape": "dot", "size": 25, "title": "Maninka"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Loma", "label": "Loma", "shape": "dot", "size": 25, "title": "Loma"}]);
+                  edges = new vis.DataSet([{"color": "#57C5B6", "from": "Western Mande", "to": "Xasonga", "width": 3}, {"color": "#57C5B6", "from": "Western Mande", "to": "Dyula", "width": 3}, {"color": "#57C5B6", "from": "Western Mande", "to": "Soninke", "width": 3}, {"color": "#57C5B6", "from": "Western Mande", "to": "Jeli", "width": 3}, {"color": "#57C5B6", "from": "Western Mande", "to": "Koranko", "width": 3}, {"color": "#57C5B6", "from": "Western Mande", "to": "Bandi", "width": 3}, {"color": "#57C5B6", "from": "Western Mande", "to": "Bozo (Tigemaxo)", "width": 3}, {"color": "#57C5B6", "from": "Western Mande", "to": "Vai", "width": 3}, {"color": "#57C5B6", "from": "Western Mande", "to": "Kpelle", "width": 3}, {"color": "#57C5B6", "from": "Western Mande", "to": "Susu", "width": 3}, {"color": "#57C5B6", "from": "Western Mande", "to": "Loko", "width": 3}, {"color": "#57C5B6", "from": "Western Mande", "to": "Mende", "width": 3}, {"color": "#57C5B6", "from": "Western Mande", "to": "Maninka (Western)", "width": 3}, {"color": "#57C5B6", "from": "Western Mande", "to": "Mauka", "width": 3}, {"color": "#57C5B6", "from": "Western Mande", "to": "Mandinka (Gambian)", "width": 3}, {"color": "#57C5B6", "from": "Western Mande", "to": "Bambara", "width": 3}, {"color": "#57C5B6", "from": "Western Mande", "to": "Loma", "width": 3}, {"color": "#57C5B6", "from": "Western Mande", "to": "Maninka", "width": 3}, {"color": "#57C5B6", "from": "Western Mande", "to": "Mandinka", "width": 3}, {"color": "#57C5B6", "from": "Western Mande", "to": "Bobo Madar\u00c3\u0192\u00c2\u00a9 (Northern)", "width": 3}, {"color": "#57C5B6", "from": "Vai", "to": "Gullah ", "width": 3}, {"color": "#57C5B6", "from": "Gullah ", "to": "Mende", "width": 3}, {"color": "#57C5B6", "from": "Mandinka", "to": "Santiago Creole", "width": 3}, {"color": "#57C5B6", "from": "Mandinka", "to": "Cape Verdean Creole", "width": 3}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
