@@ -1,7 +1,7 @@
 """This Python file genrates the visulizations from the Graph"""
 from main import LanguageGraph
 from pyvis.network import Network
-from csv_reading import read_csv
+from csv_reader import read_csv
 
 
 def generate_visuals(graph: LanguageGraph, name: str) -> None:

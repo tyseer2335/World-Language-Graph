@@ -1,6 +1,7 @@
 """This Python file contains the main classes we need for our assignment"""
 
 from __future__ import annotations
+from typing import Any, Optional
 
 
 class LanguageGraph:
@@ -75,6 +76,14 @@ class LanguageGraph:
         """
         return self._languages
 
+    def find_paths(self, start: Language, end: Language) -> list[list[Language]]:
+        """Return a list of lists of langauges that repersents a path from start language, to end language.
+
+        Preconditions:
+            - start in self._languages
+            - end in self._languages
+        """
+
 
 class Language:
     """A node that represents a language in our graph.
@@ -118,3 +127,26 @@ class Language:
                 if neighbour.tag != 'genus':
                     edges_so_far.append({language, neighbour})
         return edges_so_far
+
+    def find_path(self, target_item: str, visited: set[Language]) -> Optional[list]:
+        """
+        Return a path between self and the language corresponding to the target_item,
+        without using any of the vertices in visited. The first list element is self.item,
+        and the last is target_item. The returned list contains the language names.
+        If there is more than one such path, any of the paths is returned. Not that this function doesn't
+        find an optimal path, it just finds a path. This function is very similar to Tutorial 7 check_connected_path().
+
+        Preconditions:
+            - self not in visited
+        """
+
+        if self.name == target_item:
+            return [self.name]
+        else:
+            visited.add(self)
+            for u in self.neighbours:
+                if u not in visited:
+                    path = u.find_path(target_item, visited)
+                    if path is not None:
+                        return [self.name] + path
+            return None
