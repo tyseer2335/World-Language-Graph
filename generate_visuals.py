@@ -51,6 +51,7 @@ def highlight_path(graph: LanguageGraph, start: str, stop: str, name: str) -> No
         - start in graph.get_language().keys()
         - stop in graph.get_language().keys()
         - graph.get_language()[start].find_path(stop, set()) is not None
+        - start != stop
     """
     # Last precondition ensures that there exists a path between start and stop
 
