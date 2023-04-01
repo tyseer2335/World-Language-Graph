@@ -3,9 +3,33 @@
 import tkinter as tk
 from typing import Callable
 
-HEIGHT, WIDTH = 500, 500
-FONT = ("HP Simplified Hans Light", 16)
+HEIGHT, WIDTH = 600, 700
+FONT = ("Calibri", 16)
 LABEL_TEXT = "Select a method to use. Then, input the required arguments and press submit."
+
+
+def spanning_tree_button(frame: tk.Frame) -> None:
+    """Generates the required input fields to call the spanning tree method on the inputted frame."""
+    input_frame = tk.Frame(frame)
+    input_frame.grid(row=3, column=0, rowspan=3, columnspan=3, pady=50)
+
+    genus_box = tk.Text(input_frame, height=1, width=20, font=FONT, undo=True, pady=1, padx=1)
+    genus_box.insert(tk.END, "Input Genus")
+    genus_box.grid(row=0, column=0)
+
+    build_button(input_frame, "Submit", lambda: print(genus_box.get("0.0", tk.END)[:-1]), 1, 0)
+
+
+def location_graph_button(frame: tk.Frame) -> None:
+    """Generates the required input fields to call the spanning tree method on the inputted frame."""
+    input_frame = tk.Frame(frame)
+    input_frame.grid(row=3, column=0, rowspan=3, columnspan=3, pady=50)
+
+    location_box = tk.Text(input_frame, height=1, width=20, font=FONT, undo=True, pady=1, padx=1)
+    location_box.insert(tk.END, "Input Location")
+    location_box.grid(row=0, column=0)
+
+    build_button(input_frame, "Submit", lambda: print(location_box.get("0.0", tk.END)[:-1]), 1, 0)
 
 
 def build_button(frame: tk.Frame, text: str, function: Callable, row: int, col: int) -> None:
@@ -31,13 +55,13 @@ def build_graph() -> None:
     frame = tk.Frame(root)
     frame.pack()
 
-    label = tk.Label(frame, text=LABEL_TEXT, font=FONT, wraplength=450)
+    label = tk.Label(frame, text=LABEL_TEXT, font=FONT, wraplength=650)
     label.grid(row=0, column=0, columnspan=3, pady=(50, 0))
 
-    build_button(frame, "Button 1", lambda: print("1"), 1, 0)
-    build_button(frame, "Button 2", lambda: print("2"), 1, 1)
-    build_button(frame, "Button 3", lambda: print("3"), 1, 2)
-    build_button(frame, "Button 4", lambda: print("4"), 2, 0)
+    build_button(frame, "Spanning Tree", lambda: spanning_tree_button(frame), 1, 0)
+    build_button(frame, "Graph Location", lambda: location_graph_button(frame), 1, 1)
+    build_button(frame, "Graph Creole", lambda: print("3"), 1, 2)
+    build_button(frame, "Shortest Distance", lambda: print("4"), 2, 0)
     build_button(frame, "Button 5", lambda: print("5"), 2, 2)
 
     root.mainloop()
