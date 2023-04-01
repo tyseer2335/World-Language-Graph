@@ -1,6 +1,5 @@
 import csv
-from main import LanguageGraph
-
+from main import LanguageGraph, Language
 
 def read_csv(language_csv: str, creole_csv: str) -> LanguageGraph:
     """Take in 2 files containing a list of all the languages and a list of all the creoles respectively
@@ -17,22 +16,33 @@ def read_csv(language_csv: str, creole_csv: str) -> LanguageGraph:
         with open(creole_csv) as creole_file:
             lang_reader = list(csv.reader(lang_file))[1:]
             creole_reader = list(csv.reader(creole_file))[1:]
-            languages_set = {row[3] for row in lang_reader}
+            languages_set = set()
             for row in lang_reader:
-                language, genus = row[3], row[6]
-                language_graph.add_connection((language, 'major_lang'), (genus, 'genus'))
+                language, genus, area = row[3], row[6], row[8]
+                languages_set.add(language)
+                lang_node = Language(language, 'major_lang', area)
+                genus_node = Language(genus, 'genus', '')
+                language_graph.add_connection(lang_node, genus_node)
+
             for name, contributors in creole_reader:
+
                 contributors = contributors.split(', ')
 
+
                 if all(lang in languages_set for lang in contributors):
+                    creole_node = Language(name, 'creole', '')
                     for contributor in contributors:
-                        language_graph.add_connection((contributor, 'major_lang'), (name, 'creole'))
+
+                        language_graph.add_connection(language_graph.get_node(contributor), creole_node)
     return language_graph
+
 
 # testing
 #
-# a = read_csv('csv/relevant_genus_languages.csv', 'csv/creole_languages.csv')
-#
+# a = read_csv('csv/lang_small.csv', 'csv/creole_small.csv')
+# paths = a.creole_based_graph('Trinidadian Creole')
+# print(paths._languages)
+
 # node = a._languages['Germanic']
 #
 # tree = a.create_spanning_tree('Germanic')

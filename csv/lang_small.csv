@@ -1,0 +1,5 @@
+wals_code,iso_code,glottocode,Name,latitude,longitude,genus,family,macroarea,countrycodes
+eng,eng,stan1293,English,52,0,Germanic,Indo-European,Eurasia,GB IE
+fre,fra,stan1290,French,48,2,Romance,Indo-European,Eurasia,CH FR
+spa,spa,stan1288,Spanish,40,-4,Romance,Indo-European,Eurasia,ES
+bho,bho,bhoj1244,Bhojpuri,26,84,Indic,Indo-European,Eurasia,IN

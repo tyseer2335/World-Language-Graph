@@ -1,8 +1,7 @@
 """This Python file contains the main classes we need for our assignment"""
 
-from __future__ import annotations
-from typing import Any, Optional
 
+from __future__ import annotations
 
 class LanguageGraph:
     """A graph representing the connections between various languages.
@@ -19,18 +18,25 @@ class LanguageGraph:
         """Initialize an empty graph (no vertices or edges)."""
         self._languages = {}
 
-    def add_language(self, name: str, tag: str) -> None:
-        """Given a name, and tag of a language, add a language to the graph
+    def get_node(self, name):
+        """Given the name of the language node, give the actual node
+
+        Preconditions:
+        - name in self._languages
+        """
+        return self._languages[name]
+
+    def add_language(self, language: Language) -> None:
+        """Given a name of language and a tag, add a language to the graph
 
         Preconditions:
         - tag in {‘major_lang’, ‘genus’, ‘creole’}
         - name != ''
         - name not in self._languages
         """
-        new_language = Language(name=name, tag=tag)
-        self._languages[name] = new_language
+        self._languages[language.name] = language
 
-    def add_connection(self, language1: tuple[str, str], language2: tuple[str, str]) -> None:
+    def add_connection(self, language1: Language, language2: Language) -> None:
         """Given two languages, set them as neighbours of each other in the graph. The languages
         are formatted in tuples where the first element in each tuple is the name of the language and
         the second element is its tag. Thus, if the language does not exist yet, create it.
@@ -41,18 +47,14 @@ class LanguageGraph:
         - language1[0] != language2[0]
         """
 
-        name1, name2 = language1[0], language2[0]
-        tag1, tag2 = language1[1], language2[1]
 
-        if name1 not in self._languages:
-            self.add_language(name1, tag1)
-        if name2 not in self._languages:
-            self.add_language(name2, tag2)
+        if language1.name not in self._languages:
+            self.add_language(language1)
+        if language2.name not in self._languages:
+            self.add_language(language2)
 
-        node1, node2 = self._languages[name1], self._languages[name2]
-
-        node1.neighbours.add(node2)
-        node2.neighbours.add(node1)
+        language1.neighbours.add(language2)
+        language2.neighbours.add(language1)
 
     def create_spanning_tree(self, genus: str) -> LanguageGraph:
         """Create a spanning tree from a given genus and return the resulting graph
@@ -63,26 +65,64 @@ class LanguageGraph:
         genus_node = self._languages[genus]
         spanning_tree_edges = genus_node.get_spanning_tree()
         spanning_tree = LanguageGraph()
-        spanning_tree.add_language(genus, 'genus')
+        genus_node = Language(genus, 'genus', '')
+        spanning_tree.add_language(genus_node)
 
         for node1, node2 in spanning_tree_edges:
-            spanning_tree.add_connection((node1.name, node1.tag), (node2.name, node2.tag))
+            spanning_tree.add_connection(node1, node2)
 
         return spanning_tree
 
-    def get_language(self):
-        """
-        Gets the languages of the LanguageGraph
-        """
-        return self._languages
-
-    def find_paths(self, start: Language, end: Language) -> list[list[Language]]:
-        """Return a list of lists of langauges that repersents a path from start language, to end language.
+    def find_paths(self, start: str, end: str) -> list[LanguageGraph]:
+        """Return a list of all paths in this network, with each path represented as a linear graph.
 
         Preconditions:
-            - start in self._languages
-            - end in self._languages
+            - start in self._nodes
+            - end in self._nodes
+
         """
+        start_node = self._languages[start]
+        paths = start_node.find_paths(end, set())
+
+
+        graphs = []
+        for path in paths:
+            # print([node.name for node in path])
+            new_graph = LanguageGraph()
+            for i in range(len(path) - 1):
+                node1, node2 = path[i], path[i + 1]
+                new_graph.add_connection(node1, node2)
+            graphs.append(new_graph)
+        return graphs
+
+    def location_based_graph(self, area: str) -> LanguageGraph:
+        """Return a graph of all the genuses/languages/creoles for a given location
+
+        Preconditions:
+        - area is a valid macroarea from the csv file
+        """
+        new_graph = LanguageGraph()
+        for language in self._languages:
+            lang_node = self._languages[language]
+            if lang_node.area == area:
+                new_graph.add_language(lang_node)
+                for neighbour in lang_node.neighbours:
+                    new_graph.add_connection(lang_node, neighbour)
+        return new_graph
+
+    def creole_based_graph(self, creole: str) -> LanguageGraph:
+        """Return a tree like graph with all the languages/genuses connected to a given creole
+
+        Preconditions:
+        - creole in self._languages
+        """
+        new_graph = LanguageGraph()
+        creole_node = self._languages[creole]
+        for lang_node in creole_node.neighbours:
+            genus_node = lang_node.find_genus()
+            new_graph.add_connection(lang_node, genus_node)
+            new_graph.add_connection(lang_node, creole_node)
+        return new_graph
 
 
 class Language:
@@ -96,6 +136,8 @@ class Language:
         from language to creole
     - tag:
         Indicates whether this is a genus, major language, or creole
+    - area:
+        The macroarea in which the language is found
 
     Representation Invariants:
     - self not in self.neighbours
@@ -107,12 +149,13 @@ class Language:
     name: str
     neighbours: set[Language]
     tag: str
-
-    def __init__(self, name: str, tag: str) -> None:
+    area: str
+    def __init__(self, name: str, tag: str, area: str) -> None:
         """Initialize this node with the given name and tag and no connections to other languages."""
         self.name = name
         self.neighbours = set()
         self.tag = tag
+        self.area = area
 
     def get_spanning_tree(self) -> list[set]:
         """Return a spanning tree for all languages/creoles that derive from the node
@@ -128,25 +171,30 @@ class Language:
                     edges_so_far.append({language, neighbour})
         return edges_so_far
 
-    def find_path(self, target_item: str, visited: set[Language]) -> Optional[list]:
+    def find_paths(self, destination: str, visited: set[Language]) -> list[list[Language]]:
+        """Return a list of all possible paths from this vertex that do NOT use any nodes in visited.
+
+        The paths may be returned in any order. NOTE: unlike lecture, where paths were defined as a
+        sequence of vertices, here a path is defined as a sequence of Channels (i.e., edges). This
+        representing a bit more helpful for this assignment.
         """
-        Return a path between self and the language corresponding to the target_item,
-        without using any of the vertices in visited. The first list element is self.item,
-        and the last is target_item. The returned list contains the language names.
-        If there is more than one such path, any of the paths is returned. Not that this function doesn't
-        find an optimal path, it just finds a path. This function is very similar to Tutorial 7 check_connected_path().
+        if self.name == destination:
+            return [[self]]
+        paths = []
+        visited = visited.union({self})
+        for neighbour in self.neighbours:
+            if neighbour not in visited:
+                new_paths = neighbour.find_paths(destination, visited)
+                for path in new_paths:
+                    paths.append([self] + path)
+        return paths
+
+    def find_genus(self) -> Language:
+        """Given a language, find its respective genus
 
         Preconditions:
-            - self not in visited
+        - self.tag == 'major_lang'
         """
-
-        if self.name == target_item:
-            return [self.name]
-        else:
-            visited.add(self)
-            for u in self.neighbours:
-                if u not in visited:
-                    path = u.find_path(target_item, visited)
-                    if path is not None:
-                        return [self.name] + path
-            return None
+        for neighbour in self.neighbours:
+            if neighbour.tag == 'genus':
+                return neighbour
