@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 1250px;
+                 background-color: #03001C;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#DDDDDD", "font": {"color": "#FFF2F2"}, "id": "Romance", "label": "Romance", "shape": "dot", "size": 55, "title": "Romance"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Italian (Napolitanian)", "label": "Italian (Napolitanian)", "shape": "dot", "size": 25, "title": "Italian (Napolitanian)"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Catalan", "label": "Catalan", "shape": "dot", "size": 25, "title": "Catalan"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Italian (Turinese)", "label": "Italian (Turinese)", "shape": "dot", "size": 25, "title": "Italian (Turinese)"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Romansch", "label": "Romansch", "shape": "dot", "size": 25, "title": "Romansch"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Ladin", "label": "Ladin", "shape": "dot", "size": 25, "title": "Ladin"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Galician", "label": "Galician", "shape": "dot", "size": 25, "title": "Galician"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Romanian", "label": "Romanian", "shape": "dot", "size": 25, "title": "Romanian"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Romansch (Scharans)", "label": "Romansch (Scharans)", "shape": "dot", "size": 25, "title": "Romansch (Scharans)"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Portuguese", "label": "Portuguese", "shape": "dot", "size": 25, "title": "Portuguese"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Eastern Maroon Creole", "label": "Eastern Maroon Creole", "shape": "dot", "size": 20, "title": "Eastern Maroon Creole"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Annobonese Creole", "label": "Annobonese Creole", "shape": "dot", "size": 20, "title": "Annobonese Creole"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Kristang", "label": "Kristang", "shape": "dot", "size": 20, "title": "Kristang"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Lingala", "label": "Lingala", "shape": "dot", "size": 25, "title": "Lingala"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Guinea-Bissau Creole", "label": "Guinea-Bissau Creole", "shape": "dot", "size": 20, "title": "Guinea-Bissau Creole"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "R\u00c3\u00a9union Creole", "label": "R\u00c3\u00a9union Creole", "shape": "dot", "size": 20, "title": "R\u00c3\u00a9union Creole"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Pichinglis", "label": "Pichinglis", "shape": "dot", "size": 20, "title": "Pichinglis"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Sranan tongo", "label": "Sranan tongo", "shape": "dot", "size": 20, "title": "Sranan tongo"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Cape Verdean Creole", "label": "Cape Verdean Creole", "shape": "dot", "size": 20, "title": "Cape Verdean Creole"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Papiamento ", "label": "Papiamento ", "shape": "dot", "size": 20, "title": "Papiamento "}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "French Guianese Creole ", "label": "French Guianese Creole ", "shape": "dot", "size": 20, "title": "French Guianese Creole "}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Santiago Creole", "label": "Santiago Creole", "shape": "dot", "size": 20, "title": "Santiago Creole"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Chinese Pidgin English", "label": "Chinese Pidgin English", "shape": "dot", "size": 20, "title": "Chinese Pidgin English"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Asturian", "label": "Asturian", "shape": "dot", "size": 25, "title": "Asturian"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Romansch (Surmeiran)", "label": "Romansch (Surmeiran)", "shape": "dot", "size": 25, "title": "Romansch (Surmeiran)"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Spanish", "label": "Spanish", "shape": "dot", "size": 25, "title": "Spanish"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Chavacano", "label": "Chavacano", "shape": "dot", "size": 20, "title": "Chavacano"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Media Lengua", "label": "Media Lengua", "shape": "dot", "size": 20, "title": "Media Lengua"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Trinidadian Creole", "label": "Trinidadian Creole", "shape": "dot", "size": 20, "title": "Trinidadian Creole"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Romansch (Sursilvan)", "label": "Romansch (Sursilvan)", "shape": "dot", "size": 25, "title": "Romansch (Sursilvan)"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Spanish (Canary Islands)", "label": "Spanish (Canary Islands)", "shape": "dot", "size": 25, "title": "Spanish (Canary Islands)"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Proven\u00c3\u0192\u00c2\u00a7al", "label": "Proven\u00c3\u0192\u00c2\u00a7al", "shape": "dot", "size": 25, "title": "Proven\u00c3\u0192\u00c2\u00a7al"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Sardinian", "label": "Sardinian", "shape": "dot", "size": 25, "title": "Sardinian"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Italian (Fiorentino)", "label": "Italian (Fiorentino)", "shape": "dot", "size": 25, "title": "Italian (Fiorentino)"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "French", "label": "French", "shape": "dot", "size": 25, "title": "French"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Haitian Creole", "label": "Haitian Creole", "shape": "dot", "size": 20, "title": "Haitian Creole"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Seychellois Creole", "label": "Seychellois Creole", "shape": "dot", "size": 20, "title": "Seychellois Creole"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Cameroonian Pidgin English", "label": "Cameroonian Pidgin English", "shape": "dot", "size": 20, "title": "Cameroonian Pidgin English"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Sango", "label": "Sango", "shape": "dot", "size": 25, "title": "Sango"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Moldavian", "label": "Moldavian", "shape": "dot", "size": 25, "title": "Moldavian"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Ladino", "label": "Ladino", "shape": "dot", "size": 25, "title": "Ladino"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Italian", "label": "Italian", "shape": "dot", "size": 25, "title": "Italian"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Occitan", "label": "Occitan", "shape": "dot", "size": 25, "title": "Occitan"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Italian (Genoa)", "label": "Italian (Genoa)", "shape": "dot", "size": 25, "title": "Italian (Genoa)"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Italian (Bologna)", "label": "Italian (Bologna)", "shape": "dot", "size": 25, "title": "Italian (Bologna)"}]);
+                  edges = new vis.DataSet([{"color": "#57C5B6", "from": "Romance", "to": "Italian (Napolitanian)", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Catalan", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Italian (Turinese)", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Romansch", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Ladin", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Galician", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Romanian", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Romansch (Scharans)", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Portuguese", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Romansch (Surmeiran)", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Asturian", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Spanish", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Romansch (Sursilvan)", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Spanish (Canary Islands)", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Proven\u00c3\u0192\u00c2\u00a7al", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Sardinian", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Italian (Fiorentino)", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "French", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Moldavian", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Ladino", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Italian", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Occitan", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Italian (Genoa)", "width": 3}, {"color": "#57C5B6", "from": "Romance", "to": "Italian (Bologna)", "width": 3}, {"color": "#57C5B6", "from": "Portuguese", "to": "Eastern Maroon Creole", "width": 3}, {"color": "#57C5B6", "from": "Portuguese", "to": "Annobonese Creole", "width": 3}, {"color": "#57C5B6", "from": "Portuguese", "to": "Kristang", "width": 3}, {"color": "#57C5B6", "from": "Portuguese", "to": "Lingala", "width": 3}, {"color": "#57C5B6", "from": "Portuguese", "to": "Guinea-Bissau Creole", "width": 3}, {"color": "#57C5B6", "from": "Portuguese", "to": "R\u00c3\u00a9union Creole", "width": 3}, {"color": "#57C5B6", "from": "Portuguese", "to": "Pichinglis", "width": 3}, {"color": "#57C5B6", "from": "Portuguese", "to": "Sranan tongo", "width": 3}, {"color": "#57C5B6", "from": "Portuguese", "to": "Cape Verdean Creole", "width": 3}, {"color": "#57C5B6", "from": "Portuguese", "to": "Papiamento ", "width": 3}, {"color": "#57C5B6", "from": "Portuguese", "to": "French Guianese Creole ", "width": 3}, {"color": "#57C5B6", "from": "Portuguese", "to": "Santiago Creole", "width": 3}, {"color": "#57C5B6", "from": "Portuguese", "to": "Chinese Pidgin English", "width": 3}, {"color": "#57C5B6", "from": "Eastern Maroon Creole", "to": "French", "width": 3}, {"color": "#57C5B6", "from": "Lingala", "to": "French", "width": 3}, {"color": "#57C5B6", "from": "R\u00c3\u00a9union Creole", "to": "French", "width": 3}, {"color": "#57C5B6", "from": "Pichinglis", "to": "French", "width": 3}, {"color": "#57C5B6", "from": "Pichinglis", "to": "Spanish", "width": 3}, {"color": "#57C5B6", "from": "Papiamento ", "to": "French", "width": 3}, {"color": "#57C5B6", "from": "Papiamento ", "to": "Spanish", "width": 3}, {"color": "#57C5B6", "from": "French Guianese Creole ", "to": "French", "width": 3}, {"color": "#57C5B6", "from": "Spanish", "to": "Chavacano", "width": 3}, {"color": "#57C5B6", "from": "Spanish", "to": "Media Lengua", "width": 3}, {"color": "#57C5B6", "from": "Spanish", "to": "Trinidadian Creole", "width": 3}, {"color": "#57C5B6", "from": "Trinidadian Creole", "to": "French", "width": 3}, {"color": "#57C5B6", "from": "French", "to": "Haitian Creole", "width": 3}, {"color": "#57C5B6", "from": "French", "to": "Seychellois Creole", "width": 3}, {"color": "#57C5B6", "from": "French", "to": "Cameroonian Pidgin English", "width": 3}, {"color": "#57C5B6", "from": "French", "to": "Sango", "width": 3}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,250 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 1250px;
+                 background-color: #03001C;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 1250px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#DDDDDD", "font": {"color": "#FFF2F2"}, "id": "Bantoid", "label": "Bantoid", "shape": "dot", "size": 55, "title": "Bantoid"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Yao (in Malawi)", "label": "Yao (in Malawi)", "shape": "dot", "size": 25, "title": "Yao (in Malawi)"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Makonde", "label": "Makonde", "shape": "dot", "size": 25, "title": "Makonde"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Yamba", "label": "Yamba", "shape": "dot", "size": 25, "title": "Yamba"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Rundi", "label": "Rundi", "shape": "dot", "size": 25, "title": "Rundi"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Jarawa (in Nigeria)", "label": "Jarawa (in Nigeria)", "shape": "dot", "size": 25, "title": "Jarawa (in Nigeria)"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Mankon", "label": "Mankon", "shape": "dot", "size": 25, "title": "Mankon"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Yemba", "label": "Yemba", "shape": "dot", "size": 25, "title": "Yemba"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Dabida", "label": "Dabida", "shape": "dot", "size": 25, "title": "Dabida"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Makaa", "label": "Makaa", "shape": "dot", "size": 25, "title": "Makaa"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Runyankore", "label": "Runyankore", "shape": "dot", "size": 25, "title": "Runyankore"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Yeyi", "label": "Yeyi", "shape": "dot", "size": 25, "title": "Yeyi"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Mambila", "label": "Mambila", "shape": "dot", "size": 25, "title": "Mambila"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Yansi", "label": "Yansi", "shape": "dot", "size": 25, "title": "Yansi"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Runyoro-Rutooro", "label": "Runyoro-Rutooro", "shape": "dot", "size": 25, "title": "Runyoro-Rutooro"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Kamba", "label": "Kamba", "shape": "dot", "size": 25, "title": "Kamba"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Zulu (Northern)", "label": "Zulu (Northern)", "shape": "dot", "size": 25, "title": "Zulu (Northern)"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Mambwe", "label": "Mambwe", "shape": "dot", "size": 25, "title": "Mambwe"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Zulu (Southern)", "label": "Zulu (Southern)", "shape": "dot", "size": 25, "title": "Zulu (Southern)"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Kinga", "label": "Kinga", "shape": "dot", "size": 25, "title": "Kinga"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Zulu", "label": "Zulu", "shape": "dot", "size": 25, "title": "Zulu"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Fanagalo", "label": "Fanagalo", "shape": "dot", "size": 20, "title": "Fanagalo"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Duma", "label": "Duma", "shape": "dot", "size": 25, "title": "Duma"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Kagulu", "label": "Kagulu", "shape": "dot", "size": 25, "title": "Kagulu"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Ding", "label": "Ding", "shape": "dot", "size": 25, "title": "Ding"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Doko", "label": "Doko", "shape": "dot", "size": 25, "title": "Doko"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Kikuyu", "label": "Kikuyu", "shape": "dot", "size": 25, "title": "Kikuyu"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Kiluba", "label": "Kiluba", "shape": "dot", "size": 25, "title": "Kiluba"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Aghem", "label": "Aghem", "shape": "dot", "size": 25, "title": "Aghem"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Kinyarwanda", "label": "Kinyarwanda", "shape": "dot", "size": 25, "title": "Kinyarwanda"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Aka", "label": "Aka", "shape": "dot", "size": 25, "title": "Aka"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Duala", "label": "Duala", "shape": "dot", "size": 25, "title": "Duala"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Mpongwe", "label": "Mpongwe", "shape": "dot", "size": 25, "title": "Mpongwe"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Sena", "label": "Sena", "shape": "dot", "size": 25, "title": "Sena"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Sesotho", "label": "Sesotho", "shape": "dot", "size": 25, "title": "Sesotho"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Songe", "label": "Songe", "shape": "dot", "size": 25, "title": "Songe"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Sengele", "label": "Sengele", "shape": "dot", "size": 25, "title": "Sengele"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Ejagham", "label": "Ejagham", "shape": "dot", "size": 25, "title": "Ejagham"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Matuumbi", "label": "Matuumbi", "shape": "dot", "size": 25, "title": "Matuumbi"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Sangu", "label": "Sangu", "shape": "dot", "size": 25, "title": "Sangu"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Ekoti", "label": "Ekoti", "shape": "dot", "size": 25, "title": "Ekoti"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Kalanga", "label": "Kalanga", "shape": "dot", "size": 25, "title": "Kalanga"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Shambala", "label": "Shambala", "shape": "dot", "size": 25, "title": "Shambala"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Enya", "label": "Enya", "shape": "dot", "size": 25, "title": "Enya"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Kami", "label": "Kami", "shape": "dot", "size": 25, "title": "Kami"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Makua", "label": "Makua", "shape": "dot", "size": 25, "title": "Makua"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Shona", "label": "Shona", "shape": "dot", "size": 25, "title": "Shona"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Mundani", "label": "Mundani", "shape": "dot", "size": 25, "title": "Mundani"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Sukuma", "label": "Sukuma", "shape": "dot", "size": 25, "title": "Sukuma"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Ewondo", "label": "Ewondo", "shape": "dot", "size": 25, "title": "Ewondo"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Kongo", "label": "Kongo", "shape": "dot", "size": 25, "title": "Kongo"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Lingala", "label": "Lingala", "shape": "dot", "size": 25, "title": "Lingala"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Eastern Maroon Creole", "label": "Eastern Maroon Creole", "shape": "dot", "size": 20, "title": "Eastern Maroon Creole"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Kituba", "label": "Kituba", "shape": "dot", "size": 20, "title": "Kituba"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Suku", "label": "Suku", "shape": "dot", "size": 25, "title": "Suku"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Mwera", "label": "Mwera", "shape": "dot", "size": 25, "title": "Mwera"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Kom", "label": "Kom", "shape": "dot", "size": 25, "title": "Kom"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Fe\u0027fe\u0027", "label": "Fe\u0027fe\u0027", "shape": "dot", "size": 25, "title": "Fe\u0027fe\u0027"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Rimi", "label": "Rimi", "shape": "dot", "size": 25, "title": "Rimi"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Fiote", "label": "Fiote", "shape": "dot", "size": 25, "title": "Fiote"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Karanga", "label": "Karanga", "shape": "dot", "size": 25, "title": "Karanga"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Sotho (Northern)", "label": "Sotho (Northern)", "shape": "dot", "size": 25, "title": "Sotho (Northern)"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Kete", "label": "Kete", "shape": "dot", "size": 25, "title": "Kete"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Ngombe", "label": "Ngombe", "shape": "dot", "size": 25, "title": "Ngombe"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Subiya", "label": "Subiya", "shape": "dot", "size": 25, "title": "Subiya"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Nyambo", "label": "Nyambo", "shape": "dot", "size": 25, "title": "Nyambo"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Ndebele (in South Africa)", "label": "Ndebele (in South Africa)", "shape": "dot", "size": 25, "title": "Ndebele (in South Africa)"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Nande", "label": "Nande", "shape": "dot", "size": 25, "title": "Nande"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Swahili", "label": "Swahili", "shape": "dot", "size": 25, "title": "Swahili"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Belizean Creole", "label": "Belizean Creole", "shape": "dot", "size": 20, "title": "Belizean Creole"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Babungo", "label": "Babungo", "shape": "dot", "size": 25, "title": "Babungo"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Bafut", "label": "Bafut", "shape": "dot", "size": 25, "title": "Bafut"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Swati", "label": "Swati", "shape": "dot", "size": 25, "title": "Swati"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Kwangali", "label": "Kwangali", "shape": "dot", "size": 25, "title": "Kwangali"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Ndonga", "label": "Ndonga", "shape": "dot", "size": 25, "title": "Ndonga"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Iwoyo", "label": "Iwoyo", "shape": "dot", "size": 25, "title": "Iwoyo"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Ndumu", "label": "Ndumu", "shape": "dot", "size": 25, "title": "Ndumu"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Kenyang", "label": "Kenyang", "shape": "dot", "size": 25, "title": "Kenyang"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Kanyok", "label": "Kanyok", "shape": "dot", "size": 25, "title": "Kanyok"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Talinga", "label": "Talinga", "shape": "dot", "size": 25, "title": "Talinga"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Basa\u00c3\u0192\u00c2\u00a1", "label": "Basa\u00c3\u0192\u00c2\u00a1", "shape": "dot", "size": 25, "title": "Basa\u00c3\u0192\u00c2\u00a1"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Ngemba", "label": "Ngemba", "shape": "dot", "size": 25, "title": "Ngemba"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Babole", "label": "Babole", "shape": "dot", "size": 25, "title": "Babole"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Lunda", "label": "Lunda", "shape": "dot", "size": 25, "title": "Lunda"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Ngoni", "label": "Ngoni", "shape": "dot", "size": 25, "title": "Ngoni"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Tabwa", "label": "Tabwa", "shape": "dot", "size": 25, "title": "Tabwa"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Luganda", "label": "Luganda", "shape": "dot", "size": 25, "title": "Luganda"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Budu", "label": "Budu", "shape": "dot", "size": 25, "title": "Budu"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Londo", "label": "Londo", "shape": "dot", "size": 25, "title": "Londo"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Lebeo", "label": "Lebeo", "shape": "dot", "size": 25, "title": "Lebeo"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Nkem", "label": "Nkem", "shape": "dot", "size": 25, "title": "Nkem"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Tetela", "label": "Tetela", "shape": "dot", "size": 25, "title": "Tetela"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Beembe", "label": "Beembe", "shape": "dot", "size": 25, "title": "Beembe"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Lega", "label": "Lega", "shape": "dot", "size": 25, "title": "Lega"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Nkore-Kiga", "label": "Nkore-Kiga", "shape": "dot", "size": 25, "title": "Nkore-Kiga"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Bemba", "label": "Bemba", "shape": "dot", "size": 25, "title": "Bemba"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Tsogo", "label": "Tsogo", "shape": "dot", "size": 25, "title": "Tsogo"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Nyanga", "label": "Nyanga", "shape": "dot", "size": 25, "title": "Nyanga"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Tikar", "label": "Tikar", "shape": "dot", "size": 25, "title": "Tikar"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Bafia", "label": "Bafia", "shape": "dot", "size": 25, "title": "Bafia"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Langi", "label": "Langi", "shape": "dot", "size": 25, "title": "Langi"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Noni", "label": "Noni", "shape": "dot", "size": 25, "title": "Noni"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Tiv", "label": "Tiv", "shape": "dot", "size": 25, "title": "Tiv"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "English", "label": "English", "shape": "dot", "size": 25, "title": "English"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Bobangi", "label": "Bobangi", "shape": "dot", "size": 25, "title": "Bobangi"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Portuguese", "label": "Portuguese", "shape": "dot", "size": 25, "title": "Portuguese"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "French", "label": "French", "shape": "dot", "size": 25, "title": "French"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Benga", "label": "Benga", "shape": "dot", "size": 25, "title": "Benga"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Tuki", "label": "Tuki", "shape": "dot", "size": 25, "title": "Tuki"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Lamba", "label": "Lamba", "shape": "dot", "size": 25, "title": "Lamba"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Nsenga", "label": "Nsenga", "shape": "dot", "size": 25, "title": "Nsenga"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Teke (Southern)", "label": "Teke (Southern)", "shape": "dot", "size": 25, "title": "Teke (Southern)"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Ntomba", "label": "Ntomba", "shape": "dot", "size": 25, "title": "Ntomba"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Nyiha", "label": "Nyiha", "shape": "dot", "size": 25, "title": "Nyiha"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Bira", "label": "Bira", "shape": "dot", "size": 25, "title": "Bira"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Gunu", "label": "Gunu", "shape": "dot", "size": 25, "title": "Gunu"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Gusii", "label": "Gusii", "shape": "dot", "size": 25, "title": "Gusii"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Lamnso\u0027", "label": "Lamnso\u0027", "shape": "dot", "size": 25, "title": "Lamnso\u0027"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Nyamwezi", "label": "Nyamwezi", "shape": "dot", "size": 25, "title": "Nyamwezi"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Yaka", "label": "Yaka", "shape": "dot", "size": 25, "title": "Yaka"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Tunen", "label": "Tunen", "shape": "dot", "size": 25, "title": "Tunen"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Bakundu", "label": "Bakundu", "shape": "dot", "size": 25, "title": "Bakundu"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Lozi", "label": "Lozi", "shape": "dot", "size": 25, "title": "Lozi"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Lucazi", "label": "Lucazi", "shape": "dot", "size": 25, "title": "Lucazi"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Bakueri", "label": "Bakueri", "shape": "dot", "size": 25, "title": "Bakueri"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Tonga (in Zambia)", "label": "Tonga (in Zambia)", "shape": "dot", "size": 25, "title": "Tonga (in Zambia)"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Oku", "label": "Oku", "shape": "dot", "size": 25, "title": "Oku"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Bena-Lulua", "label": "Bena-Lulua", "shape": "dot", "size": 25, "title": "Bena-Lulua"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Luvale", "label": "Luvale", "shape": "dot", "size": 25, "title": "Luvale"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Hehe", "label": "Hehe", "shape": "dot", "size": 25, "title": "Hehe"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Tsonga", "label": "Tsonga", "shape": "dot", "size": 25, "title": "Tsonga"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Bamun", "label": "Bamun", "shape": "dot", "size": 25, "title": "Bamun"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Hemba", "label": "Hemba", "shape": "dot", "size": 25, "title": "Hemba"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Luyia", "label": "Luyia", "shape": "dot", "size": 25, "title": "Luyia"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Herero", "label": "Herero", "shape": "dot", "size": 25, "title": "Herero"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Bankon", "label": "Bankon", "shape": "dot", "size": 25, "title": "Bankon"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Tswana", "label": "Tswana", "shape": "dot", "size": 25, "title": "Tswana"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Bolia", "label": "Bolia", "shape": "dot", "size": 25, "title": "Bolia"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Hunde", "label": "Hunde", "shape": "dot", "size": 25, "title": "Hunde"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Bushoong", "label": "Bushoong", "shape": "dot", "size": 25, "title": "Bushoong"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "UMbundu", "label": "UMbundu", "shape": "dot", "size": 25, "title": "UMbundu"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Bubi", "label": "Bubi", "shape": "dot", "size": 25, "title": "Bubi"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Pichinglis", "label": "Pichinglis", "shape": "dot", "size": 20, "title": "Pichinglis"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Pangwa", "label": "Pangwa", "shape": "dot", "size": 25, "title": "Pangwa"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Bujeba", "label": "Bujeba", "shape": "dot", "size": 25, "title": "Bujeba"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Holoholo", "label": "Holoholo", "shape": "dot", "size": 25, "title": "Holoholo"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Mbere", "label": "Mbere", "shape": "dot", "size": 25, "title": "Mbere"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Bukusu", "label": "Bukusu", "shape": "dot", "size": 25, "title": "Bukusu"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Haya", "label": "Haya", "shape": "dot", "size": 25, "title": "Haya"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Mbili", "label": "Mbili", "shape": "dot", "size": 25, "title": "Mbili"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Pogoro", "label": "Pogoro", "shape": "dot", "size": 25, "title": "Pogoro"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Mbole", "label": "Mbole", "shape": "dot", "size": 25, "title": "Mbole"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Bulu", "label": "Bulu", "shape": "dot", "size": 25, "title": "Bulu"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Mbe\u0027", "label": "Mbe\u0027", "shape": "dot", "size": 25, "title": "Mbe\u0027"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Pare", "label": "Pare", "shape": "dot", "size": 25, "title": "Pare"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Mbugu", "label": "Mbugu", "shape": "dot", "size": 20, "title": "Mbugu"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Venda", "label": "Venda", "shape": "dot", "size": 25, "title": "Venda"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Vili", "label": "Vili", "shape": "dot", "size": 25, "title": "Vili"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Chaga", "label": "Chaga", "shape": "dot", "size": 25, "title": "Chaga"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Ifumu", "label": "Ifumu", "shape": "dot", "size": 25, "title": "Ifumu"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Mbosi", "label": "Mbosi", "shape": "dot", "size": 25, "title": "Mbosi"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Chichewa", "label": "Chichewa", "shape": "dot", "size": 25, "title": "Chichewa"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Ila", "label": "Ila", "shape": "dot", "size": 25, "title": "Ila"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Mungaka", "label": "Mungaka", "shape": "dot", "size": 25, "title": "Mungaka"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "CiLuba", "label": "CiLuba", "shape": "dot", "size": 25, "title": "CiLuba"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Mongo", "label": "Mongo", "shape": "dot", "size": 25, "title": "Mongo"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Mbalanhu", "label": "Mbalanhu", "shape": "dot", "size": 25, "title": "Mbalanhu"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Ronga", "label": "Ronga", "shape": "dot", "size": 25, "title": "Ronga"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Xhosa", "label": "Xhosa", "shape": "dot", "size": 25, "title": "Xhosa"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Comorian", "label": "Comorian", "shape": "dot", "size": 25, "title": "Comorian"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Mituku", "label": "Mituku", "shape": "dot", "size": 25, "title": "Mituku"}]);
+                  edges = new vis.DataSet([{"color": "#57C5B6", "from": "Bantoid", "to": "Yao (in Malawi)", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Yamba", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Makonde", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Rundi", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Jarawa (in Nigeria)", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Yemba", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Mankon", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Makaa", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Yeyi", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Runyankore", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Dabida", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Mambila", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Yansi", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Runyoro-Rutooro", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Kamba", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Zulu (Northern)", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Mambwe", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Zulu (Southern)", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Kinga", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Zulu", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Duma", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Kagulu", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Ding", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Doko", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Kikuyu", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Kiluba", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Aghem", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Kinyarwanda", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Aka", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Duala", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Mpongwe", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Sena", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Sesotho", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Songe", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Sengele", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Matuumbi", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Sangu", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Ejagham", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Ekoti", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Kalanga", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Shambala", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Enya", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Kami", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Makua", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Shona", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Mundani", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Sukuma", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Ewondo", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Kongo", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Suku", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Mwera", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Mituku", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Kom", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Fe\u0027fe\u0027", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Fiote", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Karanga", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Sotho (Northern)", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Kete", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Ngombe", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Subiya", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Nyambo", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Ndebele (in South Africa)", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Nande", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Swahili", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Babungo", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Bafut", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Swati", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Kwangali", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Ndonga", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Iwoyo", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Ndumu", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Kenyang", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Kanyok", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Talinga", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Basa\u00c3\u0192\u00c2\u00a1", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Ngemba", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Babole", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Lunda", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Ngoni", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Tabwa", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Luganda", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Budu", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Londo", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Lebeo", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Nkem", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Tetela", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Beembe", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Lega", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Nkore-Kiga", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Bemba", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Tsogo", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Nyanga", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Tikar", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Bafia", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Langi", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Noni", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Tiv", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Lingala", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Benga", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Tuki", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Lamba", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Nsenga", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Teke (Southern)", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Ntomba", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Nyiha", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Bira", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Gunu", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Gusii", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Lamnso\u0027", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Nyamwezi", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Yaka", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Tunen", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Bakundu", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Lozi", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Lucazi", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Bakueri", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Tonga (in Zambia)", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Oku", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Bena-Lulua", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Luvale", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Hehe", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Tsonga", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Bamun", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Hemba", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Luyia", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Herero", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Bankon", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Tswana", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Bobangi", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Bolia", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Hunde", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Bushoong", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "UMbundu", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Bubi", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Pangwa", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Bujeba", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Holoholo", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Mbere", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Bukusu", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Haya", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Mbili", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Pogoro", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Mbole", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Bulu", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Mbe\u0027", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Pare", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Venda", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Vili", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Chaga", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Ifumu", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Mbosi", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Chichewa", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Ila", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Mungaka", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "CiLuba", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Mongo", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Mbalanhu", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Ronga", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Xhosa", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Comorian", "width": 3}, {"color": "#57C5B6", "from": "Bantoid", "to": "Rimi", "width": 3}, {"color": "#57C5B6", "from": "Zulu", "to": "Fanagalo", "width": 3}, {"color": "#57C5B6", "from": "Fanagalo", "to": "English", "width": 3}, {"color": "#57C5B6", "from": "Kongo", "to": "Lingala", "width": 3}, {"color": "#57C5B6", "from": "Kongo", "to": "Eastern Maroon Creole", "width": 3}, {"color": "#57C5B6", "from": "Kongo", "to": "Kituba", "width": 3}, {"color": "#57C5B6", "from": "Lingala", "to": "Swahili", "width": 3}, {"color": "#57C5B6", "from": "Lingala", "to": "English", "width": 3}, {"color": "#57C5B6", "from": "Lingala", "to": "Bobangi", "width": 3}, {"color": "#57C5B6", "from": "Lingala", "to": "Portuguese", "width": 3}, {"color": "#57C5B6", "from": "Lingala", "to": "French", "width": 3}, {"color": "#57C5B6", "from": "Eastern Maroon Creole", "to": "English", "width": 3}, {"color": "#57C5B6", "from": "Eastern Maroon Creole", "to": "French", "width": 3}, {"color": "#57C5B6", "from": "Eastern Maroon Creole", "to": "Portuguese", "width": 3}, {"color": "#57C5B6", "from": "Kituba", "to": "Bobangi", "width": 3}, {"color": "#57C5B6", "from": "Swahili", "to": "Belizean Creole", "width": 3}, {"color": "#57C5B6", "from": "Belizean Creole", "to": "English", "width": 3}, {"color": "#57C5B6", "from": "English", "to": "Pichinglis", "width": 3}, {"color": "#57C5B6", "from": "Portuguese", "to": "Pichinglis", "width": 3}, {"color": "#57C5B6", "from": "French", "to": "Pichinglis", "width": 3}, {"color": "#57C5B6", "from": "Bubi", "to": "Pichinglis", "width": 3}, {"color": "#57C5B6", "from": "Pare", "to": "Mbugu", "width": 3}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
