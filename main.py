@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+
 class LanguageGraph:
     """A graph representing the connections between various languages.
 
@@ -46,7 +47,6 @@ class LanguageGraph:
         - language1[0] != '' and language2[0] != ''
         - language1[0] != language2[0]
         """
-
 
         if language1.name not in self._languages:
             self.add_language(language1)
@@ -152,6 +152,7 @@ class Language:
     neighbours: set[Language]
     tag: str
     area: str
+
     def __init__(self, name: str, tag: str, area: str) -> None:
         """Initialize this node with the given name and tag and no connections to other languages."""
         self.name = name
