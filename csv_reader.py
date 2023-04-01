@@ -39,9 +39,10 @@ def read_csv(language_csv: str, creole_csv: str) -> LanguageGraph:
 
 # testing
 #
-a = read_csv('csv/relevant_genus_languages.csv', 'csv/creole_languages.csv')
-paths = a.creole_based_graph('Eastern Maroon Creole')
-print(paths._languages)
+# a = read_csv('csv/relevant_genus_languages.csv', 'csv/creole_languages.csv')
+a = read_csv('csv/lang_small.csv', 'csv/creole_small.csv')
+paths = a.find_paths('Trinidadian Creole', 'Spanish')
+print(paths)
 
 # node = a._languages['Germanic']
 #

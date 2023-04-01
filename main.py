@@ -76,8 +76,8 @@ class LanguageGraph:
 
         return spanning_tree
 
-    def find_paths(self, start: str, end: str) -> list[LanguageGraph]:
-        """Return a list of all paths in this network, with each path represented as a linear graph.
+    def find_paths(self, start: str, end: str) -> list[list[str]]:
+        """Return a list of all paths in this network, with each path containing the language names.
 
         Preconditions:
             - start in self._nodes
@@ -87,15 +87,7 @@ class LanguageGraph:
         start_node = self._languages[start]
         paths = start_node.find_paths(end, set())
 
-        graphs = []
-        for path in paths:
-            # print([node.name for node in path])
-            new_graph = LanguageGraph()
-            for i in range(len(path) - 1):
-                node1, node2 = path[i], path[i + 1]
-                new_graph.add_connection(node1, node2)
-            graphs.append(new_graph)
-        return graphs
+        return paths
 
     def location_based_graph(self, area: str) -> LanguageGraph:
         """Return a graph of all the genuses/languages/creoles for a given location
@@ -174,22 +166,18 @@ class Language:
                     edges_so_far.append({language, neighbour})
         return edges_so_far
 
-    def find_paths(self, destination: str, visited: set[Language]) -> list[list[Language]]:
-        """Return a list of all possible paths from this vertex that do NOT use any nodes in visited.
-
-        The paths may be returned in any order. NOTE: unlike lecture, where paths were defined as a
-        sequence of vertices, here a path is defined as a sequence of Channels (i.e., edges). This
-        representing a bit more helpful for this assignment.
+    def find_paths(self, destination: str, visited: set[Language]) -> list[list[str]]:
+        """Return a list of all possible paths from this noee that do NOT use any nodes in visited.
         """
         if self.name == destination:
-            return [[self]]
+            return [[self.name]]
         paths = []
         visited = visited.union({self})
         for neighbour in self.neighbours:
             if neighbour not in visited:
                 new_paths = neighbour.find_paths(destination, visited)
                 for path in new_paths:
-                    paths.append([self] + path)
+                    paths.append([self.name] + path)
         return paths
 
     def find_genus(self) -> Language:
