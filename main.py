@@ -47,16 +47,18 @@ class LanguageGraph:
         - language1[0] != '' and language2[0] != ''
         - language1[0] != language2[0]
         """
+        if language1 is not None and language2 is not None:
+            if language1.name not in self._languages:
+                self.add_language(language1)
+            if language2.name not in self._languages:
+                self.add_language(language2)
 
-        if language1.name not in self._languages:
-            self.add_language(language1)
-        if language2.name not in self._languages:
-            self.add_language(language2)
+            language1, language2 = self._languages[language1.name], self._languages[language2.name]
 
-        language1, language2 = self._languages[language1.name], self._languages[language2.name]
-
-        language1.neighbours.add(language2)
-        language2.neighbours.add(language1)
+            language1.neighbours.add(language2)
+            language2.neighbours.add(language1)
+        else:
+            return
 
     def create_spanning_tree(self, genus: str) -> LanguageGraph:
         """Create a spanning tree from a given genus and return the resulting graph
@@ -76,18 +78,24 @@ class LanguageGraph:
 
         return spanning_tree
 
-    def find_paths(self, start: str, end: str) -> list[list[str]]:
-        """Return a list of all paths in this network, with each path containing the language names.
-
-        Preconditions:
-            - start in self._nodes
-            - end in self._nodes
-
+    def get_language(self):
         """
-        start_node = self._languages[start]
-        paths = start_node.find_paths(end, set())
+        Gets the languages of the LanguageGraph
+        """
+        return self._languages
 
-        return paths
+    # def find_paths(self, start: str, end: str) -> list[list[str]]:
+    #     """Return a list of all paths in this network, with each path containing the language names.
+    #
+    #     Preconditions:
+    #         - start in self._nodes
+    #         - end in self._nodes
+    #
+    #     """
+    #     start_node = self._languages[start]
+    #     paths = start_node.find_paths(end, set())
+    #
+    #     return paths
 
     def location_based_graph(self, area: str) -> LanguageGraph:
         """Return a graph of all the genuses/languages/creoles for a given location
@@ -166,20 +174,6 @@ class Language:
                     edges_so_far.append({language, neighbour})
         return edges_so_far
 
-    def find_paths(self, destination: str, visited: set[Language]) -> list[list[str]]:
-        """Return a list of all possible paths from this noee that do NOT use any nodes in visited.
-        """
-        if self.name == destination:
-            return [[self.name]]
-        paths = []
-        visited = visited.union({self})
-        for neighbour in self.neighbours:
-            if neighbour not in visited:
-                new_paths = neighbour.find_paths(destination, visited)
-                for path in new_paths:
-                    paths.append([self.name] + path)
-        return paths
-
     def find_genus(self) -> Language:
         """Given a language, find its respective genus
 
@@ -189,3 +183,26 @@ class Language:
         for neighbour in self.neighbours:
             if neighbour.tag == 'genus':
                 return neighbour
+
+    def find_path(self, target_item: str, visited: set[Language]) -> Optional[list]:
+        """
+        Return a path between self and the language corresponding to the target_item,
+        without using any of the vertices in visited. The first list element is self.item,
+        and the last is target_item. The returned list contains the language names.
+        If there is more than one such path, any of the paths is returned. Not that this function doesn't
+        find an optimal path, it just finds a path. This function is very similar to Tutorial 7 check_connected_path().
+
+        Preconditions:
+            - self not in visited
+        """
+
+        if self.name == target_item:
+            return [self.name]
+        else:
+            visited.add(self)
+            for u in self.neighbours:
+                if u not in visited:
+                    path = u.find_path(target_item, visited)
+                    if path is not None:
+                        return [self.name] + path
+            return None

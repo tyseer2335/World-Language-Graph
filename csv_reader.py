@@ -1,14 +1,13 @@
 import csv
 from main import LanguageGraph, Language
 
+
 def read_csv(language_csv: str, creole_csv: str) -> LanguageGraph:
     """Take in 2 files containing a list of all the languages and a list of all the creoles respectively
     and return a LanguageGraph populated with them
-
     Preconditions:
     - for every row in language_csv, the 4th column is the language and the 7th is the genus
     - for every row in creole_csv, the 1st column is the creole and the 2nd is the contributing languages
-
     """
     language_graph = LanguageGraph()
 
@@ -28,21 +27,18 @@ def read_csv(language_csv: str, creole_csv: str) -> LanguageGraph:
 
                 contributors = contributors.split(', ')
 
-
                 if all(lang in languages_set for lang in contributors):
                     creole_node = Language(name, 'creole', '')
                     for contributor in contributors:
-
                         language_graph.add_connection(language_graph.get_node(contributor), creole_node)
     return language_graph
-
 
 # testing
 #
 # a = read_csv('csv/relevant_genus_languages.csv', 'csv/creole_languages.csv')
-a = read_csv('csv/lang_small.csv', 'csv/creole_small.csv')
-paths = a.find_paths('Trinidadian Creole', 'Spanish')
-print(paths)
+# a = read_csv('csv/lang_small.csv', 'csv/creole_small.csv')
+# paths = a.find_paths('Trinidadian Creole', 'Spanish')
+# print(paths)
 
 # node = a._languages['Germanic']
 #

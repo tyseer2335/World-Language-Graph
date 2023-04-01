@@ -33,8 +33,8 @@
 
              #mynetwork {
                  width: 100%;
-                 height: 600px;
-                 background-color: #ffffff;
+                 height: 1250px;
+                 background-color: #03001C;
                  border: 1px solid lightgray;
                  position: relative;
                  float: left;
@@ -88,8 +88,8 @@
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#62CDFF", "id": 0, "label": "Genus 1", "labelHighlightBold": true, "shape": "dot", "size": 60, "title": "Genus 1"}, {"color": "#95BDFF", "id": 1, "label": "Major Language 1", "labelHighlightBold": true, "shape": "dot", "size": 30, "title": "Major Language 1"}, {"color": "#95BDFF", "id": 2, "label": "Major Language 2", "labelHighlightBold": true, "shape": "dot", "size": 30, "title": "Major Language 2"}, {"color": "#95BDFF", "id": 3, "label": "Major Language 3", "labelHighlightBold": true, "shape": "dot", "size": 30, "title": "Major Language 3"}, {"color": "#C9EEFF", "id": 4, "label": "Creole 1", "labelHighlightBold": true, "shape": "dot", "size": 15, "title": "Creole 1"}, {"color": "#C9EEFF", "id": 5, "label": "Creole 2", "labelHighlightBold": true, "shape": "dot", "size": 15, "title": "Creole 2"}, {"color": "#C9EEFF", "id": 6, "label": "Creole 3", "labelHighlightBold": true, "shape": "dot", "size": 15, "title": "Creole 3"}, {"color": "#C9EEFF", "id": 7, "label": "Creole 4", "labelHighlightBold": true, "shape": "dot", "size": 15, "title": "Creole 4"}, {"color": "#C9EEFF", "id": 8, "label": "Creole 5", "labelHighlightBold": true, "shape": "dot", "size": 15, "title": "Creole 5"}]);
-                  edges = new vis.DataSet([{"color": "#2F58CD", "from": 0, "to": 1}, {"color": "#2F58CD", "from": 0, "to": 2}, {"color": "#2F58CD", "from": 0, "to": 3}, {"color": "#2F58CD", "from": 1, "to": 4}, {"color": "#2F58CD", "from": 1, "to": 5}, {"color": "#2F58CD", "from": 2, "to": 6}, {"color": "#2F58CD", "from": 2, "to": 7}, {"color": "#2F58CD", "from": 3, "to": 8}]);
+                  nodes = new vis.DataSet([{"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Ibibio", "label": "Ibibio", "shape": "dot", "size": 25, "title": "Ibibio"}, {"color": "#DDDDDD", "font": {"color": "#FFF2F2"}, "id": "Cross River", "label": "Cross River", "shape": "dot", "size": 55, "title": "Cross River"}, {"color": "#FFDEB4", "font": {"color": "#FFF2F2"}, "id": "Belizean Creole", "label": "Belizean Creole", "shape": "dot", "size": 20, "title": "Belizean Creole"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Akan", "label": "Akan", "shape": "dot", "size": 25, "title": "Akan"}, {"color": "#DDDDDD", "font": {"color": "#FFF2F2"}, "id": "Kwa", "label": "Kwa", "shape": "dot", "size": 55, "title": "Kwa"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "English", "label": "English", "shape": "dot", "size": 25, "title": "English"}, {"color": "#DDDDDD", "font": {"color": "#FFF2F2"}, "id": "Germanic", "label": "Germanic", "shape": "dot", "size": 55, "title": "Germanic"}, {"color": "#A5D7E8", "font": {"color": "#FFF2F2"}, "id": "Swahili", "label": "Swahili", "shape": "dot", "size": 25, "title": "Swahili"}, {"color": "#DDDDDD", "font": {"color": "#FFF2F2"}, "id": "Bantoid", "label": "Bantoid", "shape": "dot", "size": 55, "title": "Bantoid"}]);
+                  edges = new vis.DataSet([{"color": "#57C5B6", "from": "Ibibio", "to": "Cross River", "width": 3}, {"color": "#57C5B6", "from": "Ibibio", "to": "Belizean Creole", "width": 3}, {"color": "#57C5B6", "from": "Belizean Creole", "to": "Akan", "width": 3}, {"color": "#57C5B6", "from": "Belizean Creole", "to": "English", "width": 3}, {"color": "#57C5B6", "from": "Belizean Creole", "to": "Swahili", "width": 3}, {"color": "#57C5B6", "from": "Akan", "to": "Kwa", "width": 3}, {"color": "#57C5B6", "from": "English", "to": "Germanic", "width": 3}, {"color": "#57C5B6", "from": "Swahili", "to": "Bantoid", "width": 3}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });
