@@ -165,3 +165,4 @@ def generate_all_graphs() -> None:
 # languages_graph = read_csv('csv/relevant_genus_languages.csv', 'csv/creole_languages.csv')
 # generate_graph(languages_graph, "complete_graph")
 # highlight_path(languages_graph, "English", "French", "english_to_french")
+# generate_all_graphs()
