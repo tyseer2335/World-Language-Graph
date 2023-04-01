@@ -84,19 +84,6 @@ class LanguageGraph:
         """
         return self._languages
 
-    # def find_paths(self, start: str, end: str) -> list[list[str]]:
-    #     """Return a list of all paths in this network, with each path containing the language names.
-    #
-    #     Preconditions:
-    #         - start in self._nodes
-    #         - end in self._nodes
-    #
-    #     """
-    #     start_node = self._languages[start]
-    #     paths = start_node.find_paths(end, set())
-    #
-    #     return paths
-
     def location_based_graph(self, area: str) -> LanguageGraph:
         """Return a graph of all the genuses/languages/creoles for a given location
 
@@ -189,7 +176,7 @@ class Language:
         Return a path between self and the language corresponding to the target_item,
         without using any of the vertices in visited. The first list element is self.item,
         and the last is target_item. The returned list contains the language names.
-        If there is more than one such path, any of the paths is returned. Not that this function doesn't
+        If there is more than one such path, any of the paths is returned. Note that this function doesn't
         find an optimal path, it just finds a path. This function is very similar to Tutorial 7 check_connected_path().
 
         Preconditions:
