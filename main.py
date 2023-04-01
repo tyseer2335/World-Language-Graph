@@ -30,9 +30,9 @@ class LanguageGraph:
         """Given a name of language and a tag, add a language to the graph
 
         Preconditions:
-        - tag in {‘major_lang’, ‘genus’, ‘creole’}
-        - name != ''
-        - name not in self._languages
+        - language.tag in {‘major_lang’, ‘genus’, ‘creole’}
+        - language.name != ''
+        - language.name not in self._languages
         """
         self._languages[language.name] = language
 
@@ -53,6 +53,8 @@ class LanguageGraph:
         if language2.name not in self._languages:
             self.add_language(language2)
 
+        language1, language2 = self._languages[language1.name], self._languages[language2.name]
+
         language1.neighbours.add(language2)
         language2.neighbours.add(language1)
 
@@ -64,6 +66,7 @@ class LanguageGraph:
         """
         genus_node = self._languages[genus]
         spanning_tree_edges = genus_node.get_spanning_tree()
+        print(spanning_tree_edges)
         spanning_tree = LanguageGraph()
         genus_node = Language(genus, 'genus', '')
         spanning_tree.add_language(genus_node)
@@ -83,7 +86,6 @@ class LanguageGraph:
         """
         start_node = self._languages[start]
         paths = start_node.find_paths(end, set())
-
 
         graphs = []
         for path in paths:
