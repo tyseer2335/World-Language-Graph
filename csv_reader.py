@@ -7,7 +7,7 @@ Copyright and Usage Information
 This file is Copyright (c) 2023 Tyseer Toufiq, Michael Zhao, Varun Sahni and Dexter Tam
 """
 import csv
-from main import Language, LanguageGraph
+from language import Language, LanguageGraph
 
 
 def read_csv(language_csv: str, creole_csv: str) -> LanguageGraph:

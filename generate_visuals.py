@@ -9,7 +9,7 @@ Copyright and Usage Information
 This file is Copyright (c) 2023 Tyseer Toufiq, Michael Zhao, Varun Sahni and Dexter Tam
 """
 from pyvis.network import Network
-from main import LanguageGraph
+from language import LanguageGraph
 from csv_reader import read_csv
 
 
