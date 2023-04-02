@@ -1,4 +1,14 @@
-"""This Python file contains the main classes we need for our assignment"""
+"""CSC111 Winter 2023 Final Project
+
+===============================
+This module contains the main classes that we built to implement our graph. The Language Graph class represents the
+Graph class from lecture, the Language class represents a Node in our graph. We decided not to create a seperate class
+for edges unlike Assignment 3 (with channels), but used a similar implementation as we did in lecture.
+
+Copyright and Usage Information
+===============================
+This file is Copyright (c) 2023 Tyseer Toufiq, Michael Zhao, Varun Sahni, Dexter Tam
+"""
 
 
 from __future__ import annotations
@@ -21,7 +31,7 @@ class LanguageGraph:
         """Initialize an empty graph (no vertices or edges)."""
         self._languages = {}
 
-    def get_node(self, name):
+    def get_node(self, name: str) -> Language:
         """Given the name of the language node, give the actual node
 
         Preconditions:
@@ -79,7 +89,7 @@ class LanguageGraph:
 
         return spanning_tree
 
-    def get_language(self):
+    def get_language(self) -> dict[str, Language]:
         """
         Gets the languages of the LanguageGraph
         """
@@ -162,7 +172,7 @@ class Language:
                     edges_so_far.append({language, neighbour})
         return edges_so_far
 
-    def find_genus(self) -> Language:
+    def find_genus(self) -> Optional[Language]:
         """Given a language, find its respective genus
 
         Preconditions:
@@ -171,6 +181,7 @@ class Language:
         for neighbour in self.neighbours:
             if neighbour.tag == 'genus':
                 return neighbour
+        return None
 
     def find_path(self, target_item: str, visited: set[Language]) -> Optional[list]:
         """
@@ -188,12 +199,18 @@ class Language:
             return [self.name]
         else:
             visited.add(self)
-            for u in self.neighbours:
-                if u not in visited:
-                    path = u.find_path(target_item, visited)
-                    if path is not None:
-                        return [self.name] + path
-            return None
+            return self._find_path_helper(target_item, visited)
+
+    def _find_path_helper(self, target_item: str, visited: set[Language]) -> Optional[list]:
+        """
+        This part handles the recursion for the find_path function above
+        """
+        for u in self.neighbours:
+            if u not in visited:
+                path = u.find_path(target_item, visited)
+                if path is not None:
+                    return [self.name] + path
+        return None
 
 
 if __name__ == '__main__':

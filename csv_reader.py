@@ -1,7 +1,13 @@
-"""This file contains the csvreader to read a CSV and make it into a language graph."""
-
+"""CSC111 Winter 2023 Final Project
+===============================
+This module contains the functions that read in the CSV data, and converts it into a LanuageGraph
+===============================
+Copyright and Usage Information
+===============================
+This file is Copyright (c) 2023 Tyseer Toufiq, Michael Zhao, Varun Sahni and Dexter Tam
+"""
 import csv
-from main import LanguageGraph, Language
+from main import Language, LanguageGraph
 
 
 def read_csv(language_csv: str, creole_csv: str) -> LanguageGraph:
@@ -20,10 +26,9 @@ def read_csv(language_csv: str, creole_csv: str) -> LanguageGraph:
             creole_reader = list(csv.reader(creole_file))[1:]
             languages_set = set()
             for row in lang_reader:
-                language, genus, area = row[3], row[6], row[8]
-                languages_set.add(language)
-                lang_node = Language(language, 'major_lang', area)
-                genus_node = Language(genus, 'genus', '')
+                languages_set.add(row[3])
+                lang_node = Language(row[3], 'major_lang', row[8])
+                genus_node = Language(row[6], 'genus', '')
                 language_graph.add_connection(lang_node, genus_node)
 
             for name, contributors in creole_reader:
@@ -36,24 +41,12 @@ def read_csv(language_csv: str, creole_csv: str) -> LanguageGraph:
                         language_graph.add_connection(language_graph.get_node(contributor), creole_node)
     return language_graph
 
-# testing
-#
-# a = read_csv('csv/relevant_genus_languages.csv', 'csv/creole_languages.csv')
-# a = read_csv('csv/lang_small.csv', 'csv/creole_small.csv')
-# paths = a.find_paths('Trinidadian Creole', 'Spanish')
-# print(paths)
 
-# node = a._languages['Germanic']
-#
-# tree = a.create_spanning_tree('Germanic')
-# for lang in tree._languages:
-#     print(lang)
-# # print('\n\n')
-# # print(len(tree._languages))
-# # print(len(node.neighbours))
-# #
-# # for lang_node in node.neighbours:
-# #     # for neighbor in lang_node.neighbours:
-# #     #     if neighbor.tag != 'genus':
-# #     #         print(neighbor.name)
-# #     print(lang_node.name)
+if __name__ == '__main__':
+    import python_ta
+
+    python_ta.check_all(config={
+        'max-line-length': 120,
+        'disable': ['E9999'],
+        'allowed-io': ['read_csv']
+    })
