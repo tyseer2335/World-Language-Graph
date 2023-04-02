@@ -100,7 +100,7 @@ def build_graph() -> None:
     build_button(frame, "Graph Location", lambda: location_graph_button(frame), 1, 1)
     build_button(frame, "Graph Creole", lambda: print("3"), 1, 2)
     build_button(frame, "Highlight Path", lambda: print("4"), 2, 0)
-    build_button(frame, "Display Graph", lambda: print("5"), 2, 2)
+    build_button(frame, "Display Graph", lambda: entire_graph_button(frame), 2, 2)
 
     root.mainloop()
 
