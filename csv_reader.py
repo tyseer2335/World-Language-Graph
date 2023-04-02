@@ -42,11 +42,11 @@ def read_csv(language_csv: str, creole_csv: str) -> LanguageGraph:
     return language_graph
 
 
-if __name__ == '__main__':
-    import python_ta
-
-    python_ta.check_all(config={
-        'max-line-length': 120,
-        'disable': ['E9999'],
-        'allowed-io': ['read_csv']
-    })
+# if __name__ == '__main__':
+#     import python_ta
+#
+#     python_ta.check_all(config={
+#         'max-line-length': 120,
+#         'disable': ['E9999'],
+#         'allowed-io': ['read_csv']
+#     })
