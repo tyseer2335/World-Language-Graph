@@ -2,6 +2,7 @@
 from main import LanguageGraph
 from pyvis.network import Network
 from csv_reader import read_csv
+import os
 
 
 def generate_graph(graph: LanguageGraph, name: str) -> None:
@@ -144,21 +145,21 @@ def generate_all_graphs() -> None:
         if langs[x].tag == "genus":
             name = langs[x].name
             spanning_tree = languages_graph.create_spanning_tree(name)
-            generate_graph(spanning_tree, "spanning_tree_" + name)
+            generate_graph(spanning_tree, "generated_graph")
 
     areas = []
     for x in langs:
         areas.append(langs[x].area)
     for x in set(areas):
         area_graph = languages_graph.location_based_graph(x)
-        generate_graph(area_graph, "area_graph_" + x)
+        generate_graph(area_graph, "generated_graph")
 
     for x in langs:
         if langs[x].tag == "creole":
             name = langs[x].name
             if name is not None:
                 creole_graph = languages_graph.creole_based_graph(name)
-                generate_graph(creole_graph, "creole_graph_" + name)
+                generate_graph(creole_graph, "generated_graph")
 
 
 # Sample Function Calls
