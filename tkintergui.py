@@ -5,6 +5,8 @@ import webbrowser
 from csv_reader import read_csv
 from typing import Callable
 from generate_visuals import generate_graph, highlight_path
+from os import listdir, getcwd
+PAGE_DIRECTORY = f"{getcwd()}\\".replace("\\", "/")
 
 HEIGHT, WIDTH = 600, 700
 FONT = ("Calibri", 16)
@@ -67,7 +69,7 @@ def entire_graph_button(frame: tk.Frame) -> None:
     languages_graph = read_csv('csv/relevant_genus_languages.csv', 'csv/creole_languages.csv')
     generate_graph(languages_graph, "generated_graph")
 
-    webbrowser.open("generated_graph.html")
+    webbrowser.open(f"{PAGE_DIRECTORY}generated_graph.html")
 
 
 def build_button(frame: tk.Frame, text: str, function: Callable, row: int, col: int) -> None:
