@@ -1,8 +1,16 @@
-"""This Python file genrates the visulizations from the Graph"""
-from main import LanguageGraph
+"""CSC111 Winter 2023 Final Project
+===============================
+This module contains the main classes that we built to implement our graph. The Language Graph class represents the
+Graph class from lecture, the Language class represents a Node in our graph. We decided not to create a seperate class
+for edges unlike Assignment 3 (with channels), but used a similar implementation as we did in lecture.
+===============================
+Copyright and Usage Information
+===============================
+This file is Copyright (c) 2023 Tyseer Toufiq, Michael Zhao, Varun Sahni and Dexter Tam
+"""
 from pyvis.network import Network
+from main import LanguageGraph
 from csv_reader import read_csv
-import os
 
 
 def generate_graph(graph: LanguageGraph, name: str) -> None:
@@ -68,35 +76,34 @@ def highlight_path(graph: LanguageGraph, start: str, stop: str, name: str) -> No
 
     # Add all the Nodes
     for x in langs:
-        if langs[x].name == start or langs[x].name == stop:
+        if langs[x].name in {start, stop}:
             nodes.append(langs[x].name)
             net.add_node(n_id=langs[x].name,
                          title=langs[x].name,
                          color="#DC3535",
                          size=55,
                          label=langs[x].name)
-        elif langs[x].name in path:
-            if langs[x].tag == "genus":
-                nodes.append(langs[x].name)
-                net.add_node(n_id=langs[x].name,
-                             title=langs[x].name,
-                             color="#E90064",
-                             size=55,
-                             label=langs[x].name)
-            elif langs[x].tag == "major_lang":
-                nodes.append(langs[x].name)
-                net.add_node(n_id=langs[x].name,
-                             title=langs[x].name,
-                             color="#E90064",
-                             size=25,
-                             label=langs[x].name)
-            else:
-                nodes.append(langs[x].name)
-                net.add_node(n_id=langs[x].name,
-                             title=langs[x].name,
-                             color="#E90064",
-                             size=20,
-                             label=langs[x].name)
+        elif langs[x].tag == "genus" and langs[x].name in path:
+            nodes.append(langs[x].name)
+            net.add_node(n_id=langs[x].name,
+                         title=langs[x].name,
+                         color="#E90064",
+                         size=55,
+                         label=langs[x].name)
+        elif langs[x].tag == "major_lang" and langs[x].name in path:
+            nodes.append(langs[x].name)
+            net.add_node(n_id=langs[x].name,
+                         title=langs[x].name,
+                         color="#E90064",
+                         size=25,
+                         label=langs[x].name)
+        elif langs[x].tag == "creole" and langs[x].name in path:
+            nodes.append(langs[x].name)
+            net.add_node(n_id=langs[x].name,
+                         title=langs[x].name,
+                         color="#E90064",
+                         size=20,
+                         label=langs[x].name)
         else:
             if langs[x].tag == "genus":
                 nodes.append(langs[x].name)
@@ -161,6 +168,14 @@ def generate_all_graphs() -> None:
                 creole_graph = languages_graph.creole_based_graph(name)
                 generate_graph(creole_graph, "generated_graph")
 
+
+if __name__ == '__main__':
+    import python_ta
+
+    python_ta.check_all(config={
+        'max-line-length': 120,
+        'disable': ['E9999']
+    })
 
 # Sample Function Calls
 # languages_graph = read_csv('csv/relevant_genus_languages.csv', 'csv/creole_languages.csv')

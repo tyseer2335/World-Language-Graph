@@ -1,4 +1,13 @@
-"""Contains the GUI interface for using the methods in our Graph."""
+"""CSC111 Winter 2023 Final Project
+===============================
+This module contains the code for building the GUI and running
+the functions implemented previously through clicking buttons on the GUI.
+===============================
+Copyright and Usage Information
+===============================
+This file is Copyright (c) 2023 Tyseer Toufiq, Michael Zhao, Varun Sahni and Dexter Tam
+"""
+
 
 import tkinter as tk
 import webbrowser
