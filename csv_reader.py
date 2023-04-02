@@ -26,10 +26,9 @@ def read_csv(language_csv: str, creole_csv: str) -> LanguageGraph:
             creole_reader = list(csv.reader(creole_file))[1:]
             languages_set = set()
             for row in lang_reader:
-                language, genus, area = row[3], row[6], row[8]
-                languages_set.add(language)
-                lang_node = Language(language, 'major_lang', area)
-                genus_node = Language(genus, 'genus', '')
+                languages_set.add(row[3])
+                lang_node = Language(row[3], 'major_lang', row[8])
+                genus_node = Language(row[6], 'genus', '')
                 language_graph.add_connection(lang_node, genus_node)
 
             for name, contributors in creole_reader:
@@ -48,5 +47,6 @@ if __name__ == '__main__':
 
     python_ta.check_all(config={
         'max-line-length': 120,
-        'disable': ['E9999']
+        'disable': ['E9999'],
+        'allowed-io': ['read_csv']
     })

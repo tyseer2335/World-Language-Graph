@@ -13,7 +13,6 @@ This file is Copyright (c) 2023 Tyseer Toufiq, Michael Zhao, Varun Sahni, Dexter
 
 from __future__ import annotations
 from typing import Optional
-import python_ta
 
 
 class LanguageGraph:
@@ -212,9 +211,10 @@ class Language:
                     return [self.name] + path
         return None
 
-    if __name__ == '__main__':
 
-        python_ta.check_all(config={
-            'max-line-length': 120,
-            'disable': ['E9999']
-        })
+if __name__ == '__main__':
+    import python_ta
+    python_ta.check_all(config={
+        'max-line-length': 120,
+        'disable': ['E9999']
+    })
