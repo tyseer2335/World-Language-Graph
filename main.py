@@ -2,6 +2,8 @@
 
 
 from __future__ import annotations
+from typing import Optional
+import tkintergui
 
 
 class LanguageGraph:
@@ -192,3 +194,14 @@ class Language:
                     if path is not None:
                         return [self.name] + path
             return None
+
+
+if __name__ == '__main__':
+    # import python_ta
+    #
+    # python_ta.check_all(config={
+    #     'max-line-length': 120,
+    #     'disable': ['E9999']
+    # })
+
+    tkintergui.build_graph()
