@@ -1,3 +1,5 @@
+"""This file contains the csvreader to read a CSV and make it into a language graph."""
+
 import csv
 from main import LanguageGraph, Language
 
@@ -5,6 +7,7 @@ from main import LanguageGraph, Language
 def read_csv(language_csv: str, creole_csv: str) -> LanguageGraph:
     """Take in 2 files containing a list of all the languages and a list of all the creoles respectively
     and return a LanguageGraph populated with them
+
     Preconditions:
     - for every row in language_csv, the 4th column is the language and the 7th is the genus
     - for every row in creole_csv, the 1st column is the creole and the 2nd is the contributing languages
