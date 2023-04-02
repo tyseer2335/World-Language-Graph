@@ -68,7 +68,6 @@ class LanguageGraph:
         """
         genus_node = self._languages[genus]
         spanning_tree_edges = genus_node.get_spanning_tree()
-        print(spanning_tree_edges)
         spanning_tree = LanguageGraph()
         genus_node = Language(genus, 'genus', '')
         spanning_tree.add_language(genus_node)
