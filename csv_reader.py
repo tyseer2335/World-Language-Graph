@@ -15,7 +15,7 @@ def read_csv(language_csv: str, creole_csv: str) -> LanguageGraph:
     and return a LanguageGraph populated with them
 
     Preconditions:
-    - for every row in language_csv, the 4th column is the language and the 7th is the genus
+    - for every row in language_csv, the 4th column is the language, the 7th is the genus and the 9th is the area
     - for every row in creole_csv, the 1st column is the creole and the 2nd is the contributing languages
     """
     language_graph = LanguageGraph()
