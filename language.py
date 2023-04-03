@@ -54,9 +54,9 @@ class LanguageGraph:
         the second element is its tag. Thus, if the language does not exist yet, create it.
 
         Preconditions:
-        - language1[1] in {‘major_lang’, ‘genus’, ‘creole’} and language2[1] in {‘major_lang’, ‘genus’, ‘creole’}
-        - language1[0] != '' and language2[0] != ''
-        - language1[0] != language2[0]
+        - language1.tag in {‘major_lang’, ‘genus’, ‘creole’} and language2.tag in {‘major_lang’, ‘genus’, ‘creole’}
+        - language1.name != '' and language2.name != ''
+        - language1.name != language2.name
         """
         if language1 is not None and language2 is not None:
             if language1.name not in self._languages:
@@ -143,6 +143,7 @@ class Language:
     - all(self in neighbour.neighbours for neighbour in self.neighbours)
     - self.tag != ‘creole’ or all(neighbour.tag != ‘creole’ for neighbour in self.neighbours)
     - self.tag in {‘major_lang’, ‘genus’, ‘creole’}
+    - self.tag != 'major_lang' or self._tag != ''
     """
     # the second last invariant is stating that creoles cannot be connected to other creoles
     name: str
@@ -191,7 +192,7 @@ class Language:
         find an optimal path, it just finds a path. This function is very similar to Tutorial 7 check_connected_path().
 
         Preconditions:
-            - self not in visited
+        - self not in visited
         """
 
         if self.name == target_item:
