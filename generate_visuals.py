@@ -1,4 +1,4 @@
-"""CSC111 Winter 2023 Final Project
+"""
 ===============================
 This module contains the main classes that we built to implement our graph. The Language Graph class represents the
 Graph class from lecture, the Language class represents a Node in our graph. We decided not to create a seperate class

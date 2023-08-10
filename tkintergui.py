@@ -1,4 +1,4 @@
-"""CSC111 Winter 2023 Final Project
+"""
 ===============================
 This module contains the code for building the GUI and running
 the functions implemented previously through clicking buttons on the GUI.

@@ -1,4 +1,4 @@
-"""CSC111 Winter 2023 Final Project
+"""
 ===============================
 This module contains the functions that read in the CSV data, and converts it into a LanuageGraph
 ===============================

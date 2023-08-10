@@ -1,5 +1,4 @@
-"""CSC111 Winter 2023 Final Project
-
+"""
 ===============================
 This module contains the method needed to run our code and provide a visual interface.
 
