@@ -1,23 +1,9 @@
-"""
-===============================
-This module contains the main classes that we built to implement our graph. The Language Graph class represents the
-Graph class from lecture, the Language class represents a Node in our graph. We decided not to create a seperate class
-for edges unlike Assignment 3 (with channels), but used a similar implementation as we did in lecture.
-===============================
-Copyright and Usage Information
-===============================
-This file is Copyright (c) 2023 Tyseer Toufiq, Michael Zhao, Varun Sahni and Dexter Tam
-"""
 from pyvis.network import Network
 from language import LanguageGraph
 from csv_reader import read_csv
 
 
 def generate_graph(graph: LanguageGraph, name: str) -> None:
-    """
-    Takes in a LanguageGraph generated using our CSV data and, generates a visual repersentation of the graph using the
-    Pyvis Library. Also takes in a string to name the generated file
-    """
     net = Network(height="1250px", width="100%", bgcolor="#03001C", font_color="#FFF2F2")
     nodes = []
     langs = graph.get_language()
@@ -56,19 +42,6 @@ def generate_graph(graph: LanguageGraph, name: str) -> None:
 
 
 def highlight_path(graph: LanguageGraph, start: str, stop: str, name: str) -> None:
-    """
-    Takes in a LanguageGraph and a start and stop language name. Generates an interactive graph,
-    that highligts the given path between the languages. Takes in the language as a string,
-    assuming the languages are in the graph.
-
-    Preconditions:
-        - start in graph.get_language().keys()
-        - stop in graph.get_language().keys()
-        - graph.get_language()[start].find_path(stop, set()) is not None
-        - start != stop
-    """
-    # Second Last precondition ensures that there exists a path between start and stop
-
     net = Network(height="1250px", width="100%", bgcolor="#03001C", font_color="#FFF2F2")
     langs = graph.get_language()
     path = langs[start].find_path(stop, set())
